@@ -1,0 +1,1 @@
+export * from './sucess-reset-password.tsx'

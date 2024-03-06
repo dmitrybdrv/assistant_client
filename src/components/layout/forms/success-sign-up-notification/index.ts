@@ -1,0 +1,1 @@
+export * from './sucess-sign-up.tsx'

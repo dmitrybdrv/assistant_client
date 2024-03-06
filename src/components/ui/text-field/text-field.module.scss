@@ -1,0 +1,74 @@
+@import '../../../styles/colors';
+
+.inputField {
+  display: grid;
+  user-select: none;
+  align-items: center;
+  position: relative;
+  margin: 1.5rem 0;
+
+  .formLabel {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 35px;
+  }
+
+  .inputFl {
+    position: relative;
+    flex: 1;
+  }
+
+  input {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 0 10px;
+    height: 35px;
+    font-size: 1rem;
+    background-color: inherit;
+    border: 1px solid;
+
+    &:hover {
+
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--color-warning);
+    }
+
+    &::selection {
+      background-color: var(--color-warning);
+    }
+
+  }
+
+  .icon {
+    top: 10px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  .error input {
+    border-color: var(--color-danger-100)!important;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .errorText {
+    user-select: none;
+
+    display: flow-root;
+
+    height: 0;
+    margin-top: 5px;
+
+    color: var(--color-danger-100);
+    text-align: left;
+  }
+}
+
+

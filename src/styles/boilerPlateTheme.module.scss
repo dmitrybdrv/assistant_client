@@ -1,0 +1,110 @@
+@import "colors";
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
+
+.formWrapper {
+  margin: 36px auto;
+
+  form {
+    width: 100%;
+
+    .field {
+      margin-bottom: 1.5rem;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 3px;
+      color: inherit;
+    }
+
+    .checkbox {
+      display: flex;
+
+
+      label {
+        margin-left: 1rem;
+      }
+    }
+
+    .footnote {
+      margin-bottom: 1.5rem;
+    }
+
+    .footnoteExtra {
+      margin-top: 1rem;
+      text-align: justify;
+    }
+
+    .linkWrapper {
+      text-decoration: none;
+    }
+
+    .btn {
+      margin-bottom: 1.5rem;
+    }
+
+    .emailIcon {
+      width: 100%;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      & svg {
+        width: 80px;
+      }
+    }
+  }
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    margin-bottom: 1rem;
+  }
+
+  .h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+}
+
+.lightTheme {
+  background-color: var(--color-theme-light);
+  color: var(--color-dark-100);
+  input {
+    border-color: var(--color-border-light)!important;
+  }
+  button {
+    border: 1px solid var(--color-border-light);
+  }
+  svg {
+    fill: var(--color-border-dark);
+  }
+}
+
+.darkTheme {
+  background-color: var(--color-theme-dark);
+  color: #fff;
+  input {
+    border-color: var(--color-border-dark)!important;
+  }
+  button {
+    border: 1px solid var(--color-border-dark);
+  }
+  svg {
+    fill: var(--color-border-light);
+  }
+}
+

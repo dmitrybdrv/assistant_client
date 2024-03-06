@@ -1,0 +1,46 @@
+@import '../../../styles/colors';
+
+.checkBoxContainer {
+  button {
+    all: unset;
+  }
+  cursor: pointer;
+  svg {
+    outline: none;
+    &:focus-visible {
+      outline: 2px solid var(--color-warning);
+    }
+  }
+
+  .checkboxRoot {
+    inset: 0;
+
+&:focus {
+
+}
+
+    &:disabled {
+      cursor: unset;
+
+      & + .label {
+        color: var(--color-theme-light);
+      }
+    }
+
+    &:not(:disabled) .selected:hover {
+      width: 30px;
+      height: 30px;
+      background: var(--color-dark-500);
+      border-radius: 50%;
+    }
+
+  }
+
+  .label {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 35px;
+    user-select: none;
+  }
+
+}

@@ -1,0 +1,21 @@
+.switcher {
+  margin-left: 3rem;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+
+  .switcherTheme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1rem;
+    color: var(--color-warning);
+    padding-right: 0.2rem;
+  }
+
+}
+
+.switchLabel {
+  margin-left: 0.5rem;
+}

@@ -1,0 +1,10 @@
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 20rem;
+  margin-right: 3rem;
+
+  a {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,92 @@
+@import '../../../styles/mixins';
+@import '../../../styles/colors';
+
+.primary {
+  @include buttonLayout(6px 28px, none);
+  stroke-width: 1px;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    background: var(--color-dark-500);
+  }
+
+  &:disabled {
+    cursor: auto;
+    background: var(--color-dark-400);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-warning);
+  }
+
+}
+
+.secondary {
+  @include buttonLayout(6px 28px, var(--color-accent-100));
+  color: #fff;
+  &:hover {
+    cursor: pointer;
+    background: var(--color-accent-200);
+  }
+
+  &:active {
+    background: var(--color-accent-300);
+  }
+
+  &:disabled {
+    cursor: auto;
+    background: var(--color-dark-400);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-warning);
+  }
+
+  border: none!important;
+}
+
+.fullWidth {
+  width: 100%;
+  padding: 6px 0;
+}
+
+//Скорректировать настройки .link если в приложении будут применяться .link иначе удалить настройки
+//.link {
+//  all: unset;
+//
+//  display: inline-flex;
+//  justify-content: center;
+//  gap: 10px;
+//  align-items: flex-start;
+//
+//  padding: 6px 0;
+//
+//  color: var(--color-accentmy-100);
+//
+//  background: transparent;
+//
+//  &:hover {
+//    cursor: pointer;
+//    color: var(--color-accentmy-200);
+//  }
+//
+//  &:active {
+//    color: var(--color-accent-700);
+//  }
+//
+//  &:disabled {
+//    cursor: unset;
+//    color: var(--color-accent-900);
+//  }
+//
+//  &:focus-visible {
+//    padding: 6px 10px;
+//    border-radius: 20px;
+//    outline: 1px solid var(--color-warning-500);
+//  }
+//}
+

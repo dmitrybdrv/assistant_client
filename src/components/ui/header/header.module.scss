@@ -1,0 +1,19 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+
+
+.headerLeftSide {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+
+  .headerLogo {
+    margin: 3rem;
+    max-width: 60px;
+    max-height: 60px;
+  }
+}
+}
