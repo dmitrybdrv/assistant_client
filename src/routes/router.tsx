@@ -8,7 +8,7 @@ import {
     SuccessResetPassword,
     SuccessSignUp,
 } from "../components";
-import App from "../App.tsx";
+import App from "../app/App.tsx";
 import {PathConstant} from "./path.ts";
 
 

@@ -1,4 +1,4 @@
-import {useTheme} from "../theme-context";
+import {useTheme} from "./useTheme.tsx";
 import clsx from "clsx";
 
 type StyleType = {
