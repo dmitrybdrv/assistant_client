@@ -48,13 +48,14 @@ const publicRoutes: RouteObject[] = [
                 ],
             },
 ]
+
 const privateRoutes: RouteObject[] = [
     {
-        path: PathConstant.PRIVATE_ROUTES,
+        path: PathConstant.PRIVATE_ROUTES.HOME,
         element: <Layout />,
         children: [
             {
-                path: PathConstant.PRIVATE_ROUTES,
+                path: PathConstant.PRIVATE_ROUTES.HOME,
                 element: <MainPage/>
              },
         ],
@@ -63,7 +64,7 @@ const privateRoutes: RouteObject[] = [
 
 export const router = createBrowserRouter([
     {
-        path: PathConstant.PRIVATE_ROUTES,
+        path: PathConstant.PRIVATE_ROUTES.HOME,
         element: <App />,
         children: [...publicRoutes, ...privateRoutes],
     },

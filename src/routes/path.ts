@@ -2,7 +2,13 @@
 Маршруты приложения
  */
 export const PathConstant = {
-    PRIVATE_ROUTES: '/',
+    PRIVATE_ROUTES: {
+        HOME: '/',
+        // GET_ALL_BOTS: '/api/bot',
+        // CREATE_BOT: '/api/bot/add',
+        // DELETE_BOT: '/api/bot/remove/:id',
+        // FIND_BOT: '/api/bot/find/:id',
+    },
     ERROR_PAGE: '/404',
     PUBLIC_ROUTES: {
         AUTH: '/auth',
@@ -14,4 +20,4 @@ export const PathConstant = {
         SUCCESS_RESET_PASSWORD: '/auth/success-reset-password-notification',
         SUCCESS_SIGN_UP: '/auth/success-sign-up-notification',
     }
-}
+} as const

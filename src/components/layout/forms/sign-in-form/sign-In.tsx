@@ -28,7 +28,7 @@ export const SignIn = () => {
 
     useEffect(() => {
         if(token) {
-            navigate(PathConstant.PRIVATE_ROUTES)
+            navigate(PathConstant.PRIVATE_ROUTES.HOME)
         }
     }, [navigate])
 

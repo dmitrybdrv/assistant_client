@@ -16,7 +16,7 @@ export const Layout = () => {
 
     useEffect(() => {
         if (token && isRestrictedRoute(location.pathname)) {
-            navigate(PathConstant.PRIVATE_ROUTES);
+            navigate(PathConstant.PRIVATE_ROUTES.HOME);
         }
     }, [navigate, token, location]);
 
