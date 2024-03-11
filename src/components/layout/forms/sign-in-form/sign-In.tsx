@@ -4,17 +4,14 @@ import {Button, Card, TextField, Typography} from "../../../ui";
 import {useForm} from "react-hook-form";
 import {signInSchema} from "../../../../common";
 import {ControlledCheckbox} from "../../../ui/checkBox/conttrolledCheckBox.tsx";
-import {Link, useNavigate} from "react-router-dom";
-import {token} from "../../layout.tsx";
-import {useEffect} from "react";
+import {Link} from "react-router-dom";
 import {SignInType} from "../forms.types.ts";
 import {PathConstant} from "../../../../routes";
+import {FormPropsType, LoginArgs} from "../../../../services/auth";
 /*
 Форма логинизации
  */
-export const SignIn = () => {
-
-    const navigate = useNavigate();
+export const SignIn = ({ onSubmit }: FormPropsType<LoginArgs>) => {
 
     const {formState: {errors}, handleSubmit, register, control} = useForm<SignInType>({
         resolver: zodResolver(signInSchema),
@@ -24,13 +21,6 @@ export const SignIn = () => {
             rememberMe: false
         },
     })
-    const onSubmit = (data: SignInType) => console.log(data)
-
-    useEffect(() => {
-        if(token) {
-            navigate(PathConstant.PRIVATE_ROUTES.HOME)
-        }
-    }, [navigate])
 
     return (
         <Card className={_bp.formWrapper}>
