@@ -10,6 +10,7 @@ import {
 } from "../components";
 import App from "../app/App.tsx";
 import {PathConstant} from "./path.ts";
+import {ErrorPage} from "../components/error-page-component";
 
 
 const publicRoutes: RouteObject[] = [
@@ -70,7 +71,7 @@ export const router = createBrowserRouter([
     },
     {
         path: PathConstant.ERROR_PAGE,
-        element: <div>Error component</div>,
+        element: <ErrorPage/>,
     },
     {
         path: '*',

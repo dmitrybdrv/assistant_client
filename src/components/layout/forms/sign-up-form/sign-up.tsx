@@ -4,23 +4,22 @@ import {Button, Card, TextField, Typography} from "../../../ui";
 import {useForm} from "react-hook-form";
 import {Link} from "react-router-dom";
 import {signUpSchema} from "../../../../common";
-import {DataType, SignUpType} from "../forms.types.ts";
 import {PathConstant} from "../../../../routes";
+import {FormPropsType, RegisterArgsType} from "../../../../types";
 /*
 Форма регистрации нового пользователя
  */
-export const SignUp = () => {
+export const SignUp = ({ onSubmit }: FormPropsType<RegisterArgsType>) => {
 
-    const {formState: {errors}, handleSubmit, register} = useForm<SignUpType>({
+    const {formState: {errors}, handleSubmit, register} = useForm<RegisterArgsType>({
         resolver: zodResolver(signUpSchema),
         defaultValues: {
             email: '',
+            name: '',
             password: '',
             confirmPassword: ''
         },
     })
-
-    const onSubmit = (data: DataType) => console.log({email: data.email, password: data.password})
 
     return (
         <Card className={_bp.formWrapper}>
@@ -34,6 +33,12 @@ export const SignUp = () => {
                     {...register('email')}
                     label={'Email'}
                     error={errors.email}
+                />
+
+                <TextField
+                    {...register('name')}
+                    label={'Name'}
+                    error={errors.name}
                 />
 
                 <TextField

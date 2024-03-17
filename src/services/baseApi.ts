@@ -1,12 +1,17 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import {createApi, fetchBaseQuery, retry} from "@reduxjs/toolkit/query/react";
 
-//Базовый эндпоинт
+const baseQuery = fetchBaseQuery({
+    baseUrl: 'http://localhost:8000/api',
+    // prepareHeaders: (headers, {getState}) => {
+    //     const token = (getState() as RootState).auth
+    // }
+})
+
+const baseQueryWithRetry = retry(baseQuery, {maxRetries: 1})
+
 export const baseApi = createApi({
     reducerPath: 'baseApi',
-    baseQuery: fetchBaseQuery ({
-        baseUrl: 'https://localhost:8000/',
-        credentials: 'include'
-    }),
-    tagTypes: ['Me'],
-    endpoints: () => ({}),
+    baseQuery: baseQueryWithRetry,
+    refetchOnMountOrArgChange: true,
+    endpoints: () => ({})
 })

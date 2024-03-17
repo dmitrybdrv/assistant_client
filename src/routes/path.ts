@@ -11,13 +11,13 @@ export const PathConstant = {
     },
     ERROR_PAGE: '/404',
     PUBLIC_ROUTES: {
-        AUTH: '/auth',
-        SIGN_IN: '/auth/sign-in',
-        SIGN_UP: '/auth/sign-up',
-        FORGOT_PASSWORD: '/auth/forgot-password-form',
-        CREATE_NEW_PASSWORD: '/auth/create-new-password-form/:token',
-        CHECK_EMAIL: '/auth/check-email-notification',
-        SUCCESS_RESET_PASSWORD: '/auth/success-reset-password-notification',
-        SUCCESS_SIGN_UP: '/auth/success-sign-up-notification',
+        AUTH: '/api',
+        SIGN_IN: '/api/user/login',
+        SIGN_UP: '/api/sign-up',
+        FORGOT_PASSWORD: '/api/forgot-password-form',
+        CREATE_NEW_PASSWORD: '/api/create-new-password-form/:token',
+        CHECK_EMAIL: '/api/check-email-notification',
+        SUCCESS_RESET_PASSWORD: '/api/success-reset-password-notification',
+        SUCCESS_SIGN_UP: '/api/success-sign-up-notification',
     }
 } as const

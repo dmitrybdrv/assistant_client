@@ -12,6 +12,17 @@ export const emailSchema = z.object({
 })
 
 /*
+Валидация для проверки имени
+@params .min - минимальное количество знаков
+@params .max - максимально допустимое количество знаков для имени
+ */
+export const nameSchema = z.object({
+    name: z.string()
+        .min(1, 'Field is required')
+        .max(30, {message: 'too much letters'})
+})
+
+/*
 Валидация пароля:
 @params .min - минимальное количество знаков
 @params .max - ьаксимальное количество знаков
@@ -45,6 +56,7 @@ export const signInSchema = z.object({
  */
 export const signUpSchema = z.object({
     email: emailSchema.shape.email,
+    name: nameSchema.shape.name,
     password: passwordSchema.shape.password,
     confirmPassword: passwordSchema.shape.password
 })

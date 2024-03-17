@@ -5,15 +5,14 @@ import {useForm} from "react-hook-form";
 import {signInSchema} from "../../../../common";
 import {ControlledCheckbox} from "../../../ui/checkBox/conttrolledCheckBox.tsx";
 import {Link} from "react-router-dom";
-import {SignInType} from "../forms.types.ts";
 import {PathConstant} from "../../../../routes";
-import {FormPropsType, LoginArgs} from "../../../../services/auth";
+import {FormPropsType, LoginArgsType} from "../../../../types";
 /*
 Форма логинизации
  */
-export const SignIn = ({ onSubmit }: FormPropsType<LoginArgs>) => {
+export const SignIn = ({onSubmit}: FormPropsType<LoginArgsType>) => {
 
-    const {formState: {errors}, handleSubmit, register, control} = useForm<SignInType>({
+    const {formState: {errors}, handleSubmit, register, control} = useForm<LoginArgsType>({
         resolver: zodResolver(signInSchema),
         defaultValues: {
             email: '',

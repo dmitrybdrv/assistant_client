@@ -1,17 +1,31 @@
 import {baseApi} from "../baseApi.ts";
-import {LoginArgs, LoginResponse} from "./auth.types.ts";
+import {LoginArgsType, RegisterArgsType, ResponseUserData} from "../../types";
 
 export const authService = baseApi.injectEndpoints({
-    endpoints: build => ({
-        login: build.mutation<LoginResponse, LoginArgs>({
-        query: data => ({
-            url: '/api/user/login',
-            method: 'POST',
-            body: data
+    endpoints: (builder) => ({
+        login: builder.mutation<ResponseUserData, LoginArgsType>({
+            query: data => ({
+                url: '/user/login',
+                method: 'POST',
+                body: data
+            })
         }),
-            //invalidatesTags: ['Me']
+        register: builder.mutation<ResponseUserData, RegisterArgsType>({
+            query: data => ({
+                url: '/user/register',
+                method: 'POST',
+                body: data
+            })
+        }),
+        current: builder.query<ResponseUserData, void>({
+            query: () => ({
+                url: '/user/current',
+                method: 'GET',
+            })
         })
     })
 })
 
-export const {useLoginMutation} = authService
+export const {useCurrentQuery, useLoginMutation, useRegisterMutation} = authService
+
+export const {endpoints: {login, register, current}} = authService

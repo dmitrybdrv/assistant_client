@@ -1,32 +1,49 @@
 import _bp from '../../styles/boilerPlateTheme.module.scss'
-import {useThemeStyles} from "../../common";
-import {SignIn, token} from "../../components";
-import {LoginArgs, useLoginMutation} from "../../services/auth";
-import {useEffect} from "react";
-import {PathConstant} from "../../routes";
-import {useNavigate} from "react-router-dom";
+import {isErrorWithMessage, useThemeStyles, useToast} from "../../common";
+import {SignIn} from "../../components";
+import {LoginArgsType} from "../../types";
+import {useLoginMutation} from "../../services/auth";
+import {useState} from "react";
 
 export function SignInPage() {
 
     const {themeStyle} = useThemeStyles(_bp, [_bp.formContainer])
-    const [login] = useLoginMutation()
-    const navigate = useNavigate();
-    const onLogin = (data: LoginArgs) => {
-        login(data)
-            .unwrap()
-            .then(() => {console.log('YEEEE')})
-            .catch()
-    }
+    const {showToast} = useToast()
+    const [userLogin] = useLoginMutation()
+    const [error, setError] = useState('')
 
-    useEffect(() => {
-        if (token) {
-            navigate(PathConstant.PRIVATE_ROUTES.HOME)
+
+    const login = async (data: LoginArgsType) => {
+
+        try {
+
+            const result = await userLogin(data)
+                .unwrap()
+                .then(() =>  showToast('Welcome man', 'success'))
+                .catch()
+            console.log(result)
+
+        } catch (e) {
+
+            const mayBeError = isErrorWithMessage(e)
+
+            if (mayBeError) {
+                setError(e.data.message)
+                console.log(error)
+                showToast(error, 'error')
+            } else {
+                showToast('Some error', 'error')
+            }
+
         }
-    }, [navigate])
+
+    }
 
     return (
         <section className={themeStyle}>
-            <SignIn onSubmit={onLogin}/>
+            <SignIn onSubmit={login}/>
         </section>
     )
-}
+    }
+
+//TODO Пофиксить белое поле ввода при выборе логина из предложенных на странице логинизации
