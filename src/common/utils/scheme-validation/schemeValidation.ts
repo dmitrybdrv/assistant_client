@@ -31,7 +31,7 @@ const passwordSchema = z.object({
     password: z
         .string()
         .min(1, 'Field is required')
-        .min(5,{message: 'Must be more than 5 symbols'})
+        .min(6,{message: 'Must be more than 5 symbols'})
         .max(30, { message: 'Password should be not more 30 characters' })
 })
 

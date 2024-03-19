@@ -3,13 +3,16 @@ import {LoginArgsType, RegisterArgsType, ResponseUserData, UserData} from "../..
 
 export const authService = baseApi.injectEndpoints({
     endpoints: (builder) => ({
+        //Логинизация
         login: builder.mutation<ResponseUserData, LoginArgsType>({
             query: data => ({
                 url: '/user/login',
                 method: 'POST',
                 body: data
-            })
+            }),
+            invalidatesTags: ['User']
         }),
+        //Регистрайция
         register: builder.mutation<ResponseUserData, RegisterArgsType>({
             query: data => ({
                 url: '/user/register',
@@ -17,15 +20,18 @@ export const authService = baseApi.injectEndpoints({
                 body: data
             })
         }),
-        current: builder.query<UserData, void>({
-            query: () => ({
+        //Аутентификация пользователя
+        current: builder.query<UserData, string>({
+            query: (token) => ({
                 url: '/user/current',
                 method: 'GET',
-            })
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            }),
+            providesTags: ['User']
         })
     })
 })
 
 export const {useCurrentQuery, useLoginMutation, useRegisterMutation} = authService
-
-export const {endpoints: {login, register, current}} = authService
