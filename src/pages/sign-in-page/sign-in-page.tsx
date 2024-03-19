@@ -2,13 +2,12 @@ import _bp from '../../styles/boilerPlateTheme.module.scss'
 import {isErrorWithMessage, useThemeStyles, useToast} from "../../common";
 import {SignIn} from "../../components";
 import {LoginArgsType} from "../../types";
-import {useCurrentQuery, useLoginMutation} from "../../services/auth";
+import {useLoginMutation} from "../../services/auth";
 
 export function SignInPage() {
 
     const {themeStyle} = useThemeStyles(_bp, [_bp.formContainer])
     const {showToast} = useToast()
-    const {isLoading} = useCurrentQuery()
     const [userLogin] = useLoginMutation()
 
     const login = async (data: LoginArgsType) => {
@@ -42,9 +41,6 @@ export function SignInPage() {
 
     return (
         <section className={themeStyle}>
-                {isLoading &&
-                    <div style={{position: 'absolute', left: '48%', top: '15%'}}>Loading...</div>
-                }
                 <SignIn onSubmit={login}/>
         </section>
     )
