@@ -31,4 +31,22 @@ export type ResponseUserData = {
     token: string
 }
 
+export type UserData = {
+    id: string
+    name: string
+    password: string
+    email: string
+    createdReviewerBot: ReviewerBotType[]
+}
+
+export type ReviewerBotType = {
+    id: string
+    botName: string
+    //TODO пофиксить тип user со string на верный
+    user: string
+    userId: string
+    answerRule: string
+}
+
+
 export type ToastType = 'success' | 'warning' | 'error'

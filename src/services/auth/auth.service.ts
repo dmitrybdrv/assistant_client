@@ -1,5 +1,5 @@
 import {baseApi} from "../baseApi.ts";
-import {LoginArgsType, RegisterArgsType, ResponseUserData} from "../../types";
+import {LoginArgsType, RegisterArgsType, ResponseUserData, UserData} from "../../types";
 
 export const authService = baseApi.injectEndpoints({
     endpoints: (builder) => ({
@@ -17,7 +17,7 @@ export const authService = baseApi.injectEndpoints({
                 body: data
             })
         }),
-        current: builder.query<ResponseUserData, void>({
+        current: builder.query<UserData, void>({
             query: () => ({
                 url: '/user/current',
                 method: 'GET',

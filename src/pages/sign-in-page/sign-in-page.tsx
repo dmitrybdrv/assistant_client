@@ -3,15 +3,12 @@ import {isErrorWithMessage, useThemeStyles, useToast} from "../../common";
 import {SignIn} from "../../components";
 import {LoginArgsType} from "../../types";
 import {useLoginMutation} from "../../services/auth";
-import {useState} from "react";
 
 export function SignInPage() {
 
     const {themeStyle} = useThemeStyles(_bp, [_bp.formContainer])
     const {showToast} = useToast()
     const [userLogin] = useLoginMutation()
-    const [error, setError] = useState('')
-
 
     const login = async (data: LoginArgsType) => {
 
@@ -19,7 +16,10 @@ export function SignInPage() {
 
             const result = await userLogin(data)
                 .unwrap()
-                .then(() =>  showToast('Welcome man', 'success'))
+                .then((res) =>  {
+                    console.log(res)
+                    showToast('Welcome man', 'success')
+                })
                 .catch()
             console.log(result)
 
@@ -27,12 +27,10 @@ export function SignInPage() {
 
             const mayBeError = isErrorWithMessage(e)
 
-            if (mayBeError) {
-                setError(e.data.message)
-                console.log(error)
-                showToast(error, 'error')
+           if (mayBeError) {
+                showToast(e.data.message, 'error')
             } else {
-                showToast('Some error', 'error')
+                showToast('Что-то пошло не так 😬', 'error')
             }
 
         }
