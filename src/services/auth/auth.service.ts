@@ -21,13 +21,10 @@ export const authService = baseApi.injectEndpoints({
             })
         }),
         //Аутентификация пользователя
-        current: builder.query<UserData, string>({
-            query: (token) => ({
+        current: builder.query<UserData, void>({
+            query: () => ({
                 url: '/user/current',
                 method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
             }),
             providesTags: ['User']
         })

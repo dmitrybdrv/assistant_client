@@ -8,8 +8,8 @@ export function SignInPage() {
 
     const {themeStyle} = useThemeStyles(_bp, [_bp.formContainer])
     const {showToast} = useToast()
+    const {isLoading} = useCurrentQuery()
     const [userLogin] = useLoginMutation()
-    const {data, isLoading} = useCurrentQuery('123123123123')
 
     const login = async (data: LoginArgsType) => {
 
@@ -38,7 +38,6 @@ export function SignInPage() {
 
     }
 
-    console.log(data)
 
 
     return (
