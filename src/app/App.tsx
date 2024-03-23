@@ -1,8 +1,8 @@
 import s from './app.module.scss'
 import {ThemeProvider} from "../common";
 import {Footer, Header, Layout} from "../components";
-import {Slide, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import {Toaster} from "../common";
 
 
 function App() {
@@ -11,20 +11,7 @@ function App() {
             <ThemeProvider>
                 <div className={s.appContainer}>
                     <Header/>
-                    <ToastContainer
-                        position="top-center"
-                        autoClose={5000}
-                        hideProgressBar={false}
-                        newestOnTop={false}
-                        closeOnClick
-                        rtl={false}
-                        pauseOnFocusLoss
-                        draggable
-                        pauseOnHover
-                        theme="colored"
-                        stacked
-                        transition={Slide}
-                    />
+                    <Toaster/>
                     <Layout/>
                     <Footer/>
                 </div>
