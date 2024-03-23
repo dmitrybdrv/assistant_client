@@ -1,5 +1,5 @@
 import {Action, createSlice} from "@reduxjs/toolkit"
-import {LoadingState} from "../../types";
+import {LoadingState} from "src/types";
 
 export type InitialStateType = {
     isLoading: LoadingState

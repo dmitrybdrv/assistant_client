@@ -1,17 +1,16 @@
 import {createBrowserRouter, Navigate, RouteObject} from "react-router-dom";
-import {MainPage, SignInPage, SignUpPage} from "../pages";
+
+import {PathConstant} from "./path.ts";
+import App from "src/app/App.tsx";
+import {MainPage, SignInPage, SignUpPage} from "src/pages";
 import {
     CheckEmail,
-    CreateNewPassword,
+    CreateNewPassword, ErrorPage,
     ForgotPassword,
     Layout,
     SuccessResetPassword,
-    SuccessSignUp,
-} from "../components";
-import App from "../app/App.tsx";
-import {PathConstant} from "./path.ts";
-import {ErrorPage} from "../components/error-page-component";
-
+    SuccessSignUp
+} from "src/components";
 
 const publicRoutes: RouteObject[] = [
    {

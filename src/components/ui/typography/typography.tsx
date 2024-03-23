@@ -1,9 +1,7 @@
 import { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
-
 import { clsx } from 'clsx'
-
 import s from './typography.module.scss'
-import {tagMapping, VariantStyle} from "./typography.types.ts";
+import {tagMapping, VariantStyle} from "src/components";
 
 type TypographyOwnType<T extends ElementType = ElementType> = {
     children: ReactNode

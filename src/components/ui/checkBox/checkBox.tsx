@@ -2,8 +2,7 @@ import {FC} from "react";
 import s from './checkbox.module.scss'
 import * as Checkbox from '@radix-ui/react-checkbox';
 import clsx from "clsx";
-import {UnCheckIcon} from "../../../assets";
-import {CheckIcon} from "../../../assets";
+import {CheckIcon, UnCheckIcon} from "src/assets";
 
 type Props = {
     disabled?: boolean

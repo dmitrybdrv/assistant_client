@@ -1,6 +1,5 @@
 import {useContext} from 'react';
-import {ThemeContextType} from "../utils";
-import {ThemeContext} from "../utils";
+import {ThemeContext, ThemeContextType} from "src/common";
 
 
 /*

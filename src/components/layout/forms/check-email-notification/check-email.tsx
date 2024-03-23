@@ -1,9 +1,9 @@
-import {Button, Card, Typography} from "../../../ui";
 import clsx from "clsx";
-import _bp from '../../../../styles/boilerPlateTheme.module.scss'
+import _bp from 'src/styles/boilerPlateTheme.module.scss'
 import {Link} from "react-router-dom";
-import {CheckEmailImg} from "../../../../assets/img";
-import {PathConstant} from "../../../../routes";
+import {CheckEmailImg} from "src/assets";
+import {PathConstant} from "src/routes";
+import {Button, Card, Typography} from "src/components";
 
 /*
 Форма-уведомление о проверки почты, на которую отправлена инструкция по востановлению доступа

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import _bp from '../../../../styles/boilerPlateTheme.module.scss'
-import {Button, Card, Typography} from "../../../ui";
-import {PathConstant} from "../../../../routes";
+import _bp from 'src/styles/boilerPlateTheme.module.scss'
+import {PathConstant} from "src/routes";
+import {Button, Card, Typography} from "src/components";
 /*
 Форма-уведомление об успешной регистрации нового пользователя
  */

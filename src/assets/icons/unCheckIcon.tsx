@@ -1,5 +1,5 @@
-import {useTheme} from "../../common";
 import clsx from "clsx";
+import {useTheme} from "src/common";
 /*
 Иконка чекбокса - заливка при свойствах checked и unChecked + Галочка чекбокса
  */

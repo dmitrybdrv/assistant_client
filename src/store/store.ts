@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import auth from '../features/authSlice/auth.slice.ts'
 import app from '../features/appSlice/app.slice.ts'
-import {baseApi} from "../services/baseApi.ts";
+import {baseApi} from "src/services";
 
 export const store = configureStore({
     reducer: {

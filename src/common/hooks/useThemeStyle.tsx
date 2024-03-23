@@ -1,5 +1,5 @@
-import {useTheme} from "./useTheme.tsx";
 import clsx from "clsx";
+import {useTheme} from "src/common";
 
 type StyleType = {
     [key: string]: string

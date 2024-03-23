@@ -1,11 +1,13 @@
-import _bp from '../../../../styles/boilerPlateTheme.module.scss'
+import _bp from 'src/styles/boilerPlateTheme.module.scss'
 import {zodResolver} from '@hookform/resolvers/zod';
-import {Button, Card, TextField, Typography} from "../../../ui";
 import {useForm} from "react-hook-form";
 import {Link} from "react-router-dom";
-import {signUpSchema} from "../../../../common";
-import {PathConstant} from "../../../../routes";
-import {FormPropsType, RegisterArgsType} from "../../../../types";
+import {FormPropsType, RegisterArgsType} from "src/types";
+import {signUpSchema} from "src/common";
+import {PathConstant} from "src/routes";
+import {Button, Card, TextField, Typography} from "src/components";
+
+
 /*
 Форма регистрации нового пользователя
  */

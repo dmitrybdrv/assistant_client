@@ -1,8 +1,9 @@
 import _bp from '../../styles/boilerPlateTheme.module.scss'
-import {isErrorWithMessage, useThemeStyles, useToast} from "../../common";
-import {SignIn} from "../../components";
-import {LoginArgsType} from "../../types";
-import {useLoginMutation} from "../../services/auth";
+import {isErrorWithMessage, useThemeStyles, useToast} from "src/common";
+import {useLoginMutation} from "src/services";
+import {LoginArgsType} from "src/types";
+import {SignIn} from "src/components";
+
 
 export function SignInPage() {
 

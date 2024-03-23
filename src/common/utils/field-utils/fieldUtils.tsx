@@ -1,8 +1,6 @@
 import {HTMLInputTypeAttribute} from "react";
-import {OpenEye} from "../../../assets";
-import {ClosedEye} from "../../../assets";
-import s from '../../../components/ui/text-field/text-field.module.scss'
-
+import s from 'src/components/ui/text-field/text-field.module.scss'
+import {ClosedEye, OpenEye} from "src/assets";
 /*
 Функция - динамически определяет тип для поля ввода в зависимости от переданных аргументов.
 Основной сценарий использования - обработка типа 'password' и изменение его на 'text',
@@ -21,7 +19,6 @@ export const getType = (iconState: boolean, type: HTMLInputTypeAttribute) => {
 
     return type
 }
-
 /*
 Функция - на основании типа поля (type) и состояния (iconState) определяет выбор иконок для отображения в поле password.
  (при условии если type === password)

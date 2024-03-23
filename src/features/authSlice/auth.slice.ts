@@ -1,7 +1,8 @@
-import {ResponseUserData} from "../../types";
+import {ResponseUserData} from "src/types";
 import {createSlice} from "@reduxjs/toolkit";
-import {authService} from "../../services/auth";
-import {RootState} from "../../store";
+import {authService} from "src/services";
+import {RootState} from "src/store";
+
 
 type InitialState = {
     user: ResponseUserData | null
@@ -29,8 +30,8 @@ const slice = createSlice({
                 state.user = action.payload
                 state.isAuthenticate = true
             })
-            .addMatcher(authService.endpoints.current.matchFulfilled, (state, action) => {
-                state.user = action.payload
+            .addMatcher(authService.endpoints.current.matchFulfilled, (state) => {
+                //TODO дописать логику
                 state.isAuthenticate = true
             })
     }

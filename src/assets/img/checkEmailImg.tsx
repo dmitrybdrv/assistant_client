@@ -1,6 +1,6 @@
-import _bp from '../../styles/boilerPlateTheme.module.scss'
+import _bp from 'src/styles/boilerPlateTheme.module.scss'
 import {FC} from "react";
-import {useThemeStyles} from "../../common";
+import {useThemeStyles} from "src/common";
 /*
 Изображение доставленного пиьма (исп. в компоненте: CheckEmail)
  */

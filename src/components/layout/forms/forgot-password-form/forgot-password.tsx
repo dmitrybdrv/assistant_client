@@ -1,12 +1,13 @@
-import _bp from '../../../../styles/boilerPlateTheme.module.scss'
+import _bp from 'src/styles/boilerPlateTheme.module.scss'
 import {zodResolver} from '@hookform/resolvers/zod';
-import {Button, Card, TextField, Typography} from "../../../ui";
 import {useForm} from "react-hook-form";
-import {emailSchema} from "../../../../common";
 import clsx from "clsx";
 import {Link, useNavigate} from "react-router-dom";
-import {EmailType} from "../forms.types.ts";
-import {PathConstant} from "../../../../routes";
+import {EmailType} from "src/types";
+import {emailSchema} from "src/common";
+import {PathConstant} from "src/routes";
+import {Button, Card, TextField, Typography} from "src/components";
+
 /*
 Форма сброса пароля на указанную пользователем почту
  */

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import {useTheme} from "../../common";
+import {useTheme} from "src/common";
 
 /*
 Иконка - чекбокс. В зависимости оттемы приложения меняется цвет границ чекбокса

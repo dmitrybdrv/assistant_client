@@ -1,10 +1,11 @@
 import { clsx } from 'clsx'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
-import _bp from '../../../../styles/boilerPlateTheme.module.scss'
+import _bp from 'src/styles/boilerPlateTheme.module.scss'
 import {Button, Card, TextField, Typography} from "../../../ui";
-import {PasswordType} from "../forms.types.ts";
-import {PathConstant} from "../../../../routes";
+import {PasswordType} from "src/types";
+import {PathConstant} from "src/routes";
+
 /*
 Форма страницы создания нового пароля
  */

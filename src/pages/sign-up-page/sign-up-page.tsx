@@ -1,8 +1,9 @@
 import _bp from '../../styles/boilerPlateTheme.module.scss'
-import {isErrorWithMessage, useThemeStyles, useToast} from "../../common";
-import {SignUp} from "../../components";
-import {RegisterArgsType} from "../../types";
-import {useRegisterMutation} from "../../services/auth";
+import {isErrorWithMessage, useThemeStyles, useToast} from "src/common";
+import {useRegisterMutation} from "src/services";
+import {RegisterArgsType} from "src/types";
+import {SignUp} from "src/components";
+
 
 export function SignUpPage() {
 

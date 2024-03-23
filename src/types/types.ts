@@ -48,5 +48,8 @@ export type ReviewerBotType = {
     answerRule: string
 }
 
+export type PasswordType = Pick<UserData, 'password'>
+
+export type EmailType = Pick<UserData, 'email'>
 
 export type ToastType = 'success' | 'warning' | 'error'

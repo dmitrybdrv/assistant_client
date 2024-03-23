@@ -1,6 +1,6 @@
 import ReactSwitch from "react-switch";
 import s from "./switcher.module.scss";
-import {useTheme} from "../../../../common";
+import {useTheme} from "src/common";
 
 export function Switcher() {
 

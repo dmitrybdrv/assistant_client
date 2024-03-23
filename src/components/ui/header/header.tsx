@@ -1,9 +1,10 @@
 import s from './header.module.scss'
 import {Navbar} from "./navbar";
 import logo from '../../../assets/img/logo1.svg'
-import _bp from "../../../styles/boilerPlateTheme.module.scss";
-import {Switcher} from "./switcher";
-import {useThemeStyles} from "../../../common";
+import _bp from "src/styles/boilerPlateTheme.module.scss";
+import {useThemeStyles} from "src/common";
+import {Switcher} from "src/components/ui/header/switcher";
+
 
 export function Header() {
 
