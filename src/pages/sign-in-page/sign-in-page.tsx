@@ -4,7 +4,6 @@ import {useLoginMutation} from "src/services";
 import {LoginArgsType} from "src/types";
 import {SignIn} from "src/components";
 
-
 export function SignInPage() {
 
     const {themeStyle} = useThemeStyles(_bp, [_bp.formContainer])
@@ -15,14 +14,13 @@ export function SignInPage() {
 
         try {
 
-            const result = await userLogin(data)
+            await userLogin(data)
                 .unwrap()
                 .then((res) =>  {
-                    console.log(res)
-                    showToast('Welcome 😀', 'success')
+                    const userName = res?.name ? res.name : 'User'
+                    showToast(`Welcome 😀, ${userName}`, 'success')
                 })
                 .catch()
-            console.log(result)
 
         } catch (e) {
 
@@ -38,13 +36,12 @@ export function SignInPage() {
 
     }
 
-
-
     return (
         <section className={themeStyle}>
+            {/*{isLoading && <img src={loading} alt={'loader'} />}*/}
                 <SignIn onSubmit={login}/>
         </section>
     )
     }
 
-//TODO Пофиксить белое поле ввода при выборе логина из предложенных на странице логинизации
+    //TODO раскоментировать лоадер. Создать визуализацию загрузки

@@ -3,10 +3,12 @@ import {isErrorWithMessage, useThemeStyles, useToast} from "src/common";
 import {useRegisterMutation} from "src/services";
 import {RegisterArgsType} from "src/types";
 import {SignUp} from "src/components";
+import {useNavigate} from "react-router-dom";
+import {PathConstant} from "src/routes";
 
 
 export function SignUpPage() {
-
+    const navigate = useNavigate()
     const {themeStyle} = useThemeStyles(_bp, [_bp.formContainer])
     const [userRegister] = useRegisterMutation()
     const {showToast} = useToast()
@@ -14,20 +16,16 @@ export function SignUpPage() {
     const register = async (data: RegisterArgsType) => {
 
         try {
-
-            const result = await userRegister(data)
+            await userRegister(data)
                 .unwrap()
-                .then((res) =>  {
-                    console.log(res)
-                    showToast('Great 😇', 'success')
+                .then(() => {
+                    showToast('Отлично, зарегистрированы😇! теперь войдите в аккаунт', 'success')
+                    navigate(PathConstant.PUBLIC_ROUTES.SIGN_IN)
                 })
                 .catch()
-            console.log(result)
-
         } catch (e) {
 
             const mayBeError = isErrorWithMessage(e)
-
             if (mayBeError) {
                 showToast(e.data.message, 'error')
             } else {
@@ -35,7 +33,6 @@ export function SignUpPage() {
             }
 
         }
-
     }
 
 
