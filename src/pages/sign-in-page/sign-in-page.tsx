@@ -1,14 +1,20 @@
-import _bp from '../../styles/boilerPlateTheme.module.scss'
-import {isErrorWithMessage, useThemeStyles, useToast} from "src/common";
+import _bp from 'src/styles/boilerPlateTheme.module.scss'
+import {isErrorWithMessage, useAppSelector, useThemeStyles, useToast} from "src/common";
 import {useLoginMutation} from "src/services";
 import {LoginArgsType} from "src/types";
 import {SignIn} from "src/components";
+import {PathConstant} from "src/routes";
+import {useNavigate} from "react-router-dom";
+import {selectUser} from "src/features";
+import {useEffect} from "react";
 
 export function SignInPage() {
 
     const {themeStyle} = useThemeStyles(_bp, [_bp.formContainer])
     const {showToast} = useToast()
     const [userLogin] = useLoginMutation()
+    const navigate = useNavigate()
+    const user = useAppSelector(selectUser)
 
     const login = async (data: LoginArgsType) => {
 
@@ -16,7 +22,7 @@ export function SignInPage() {
 
             await userLogin(data)
                 .unwrap()
-                .then((res) =>  {
+                .then((res) => {
                     const userName = res?.name ? res.name : 'User'
                     showToast(`Welcome 😀, ${userName}`, 'success')
                 })
@@ -26,7 +32,7 @@ export function SignInPage() {
 
             const mayBeError = isErrorWithMessage(e)
 
-           if (mayBeError) {
+            if (mayBeError) {
                 showToast(e.data.message, 'error')
             } else {
                 showToast('Что-то пошло не так 😬', 'error')
@@ -36,12 +42,17 @@ export function SignInPage() {
 
     }
 
+    useEffect(() => {
+        if (user !== null) {
+            navigate(PathConstant.PRIVATE_ROUTES.HOME)
+        }
+    }, [navigate, user])
+
     return (
         <section className={themeStyle}>
-            {/*{isLoading && <img src={loading} alt={'loader'} />}*/}
-                <SignIn onSubmit={login}/>
+            <SignIn onSubmit={login}/>
         </section>
     )
-    }
+}
 
-    //TODO раскоментировать лоадер. Создать визуализацию загрузки
+//TODO раскоментировать лоадер. Создать визуализацию загрузки
