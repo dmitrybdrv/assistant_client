@@ -1,4 +1,4 @@
-import { toast, ToastOptions } from 'react-toastify'
+import {toast, ToastOptions} from 'react-toastify'
 import {ToastType} from "src/types";
 
 export const useToast = () => {
@@ -6,7 +6,7 @@ export const useToast = () => {
 
         const toastOptions: ToastOptions = {
             autoClose: 3000,
-
+            pauseOnFocusLoss: false,
             toastId: new Date().toDateString(),
             ...options,
         }
@@ -20,5 +20,5 @@ export const useToast = () => {
         }
     }
 
-    return { showToast }
+    return {showToast}
 }

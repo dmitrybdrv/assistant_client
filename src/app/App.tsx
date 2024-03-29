@@ -1,7 +1,7 @@
 import s from './app.module.scss'
 import 'react-toastify/dist/ReactToastify.css';
-import {ThemeProvider, Toaster} from "src/common";
-import {Footer, Header, Layout} from "src/components";
+import {ThemeProvider} from "src/common";
+import {Footer, Header, Layout, Toaster} from "src/components";
 
 
 
