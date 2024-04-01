@@ -48,6 +48,12 @@ export type ReviewerBotType = {
     answerRule: string
 }
 
+export type RecoverPassword = {
+    html?: string
+    email: string
+    subject?: string
+}
+
 export type PasswordType = Pick<UserData, 'password'>
 
 export type EmailType = Pick<UserData, 'email'>

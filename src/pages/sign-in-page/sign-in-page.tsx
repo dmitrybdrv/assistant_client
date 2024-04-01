@@ -37,13 +37,12 @@ export function SignInPage() {
             } else {
                 showToast('Что-то пошло не так 😬', 'error')
             }
-
         }
 
     }
 
     useEffect(() => {
-        if (user !== null) {
+        if (user?.token) {
             navigate(PathConstant.PRIVATE_ROUTES.HOME)
         }
     }, [navigate, user])

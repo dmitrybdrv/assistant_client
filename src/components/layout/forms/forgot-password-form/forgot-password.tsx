@@ -4,9 +4,11 @@ import {useForm} from "react-hook-form";
 import clsx from "clsx";
 import {Link, useNavigate} from "react-router-dom";
 import {EmailType} from "src/types";
-import {emailSchema} from "src/common";
+import {emailSchema, isErrorWithMessage, useAppDispatch, useToast} from "src/common";
 import {PathConstant} from "src/routes";
 import {Button, Card, TextField, Typography} from "src/components";
+import {setEmail} from "src/features";
+import {useRecoverPasswordMutation} from "src/services";
 
 /*
 Форма сброса пароля на указанную пользователем почту
@@ -14,8 +16,10 @@ import {Button, Card, TextField, Typography} from "src/components";
 export const ForgotPassword = () => {
 
     const navigate = useNavigate()
-
+    const dispatch = useAppDispatch()
     const typographyStyle = clsx(_bp.footnote, _bp.footnoteExtra)
+    const [recoverPassword] = useRecoverPasswordMutation()
+    const {showToast} = useToast()
 
     const {formState: {errors}, handleSubmit, register} = useForm<EmailType>({
         resolver: zodResolver(emailSchema),
@@ -24,14 +28,30 @@ export const ForgotPassword = () => {
         },
     })
 
-    const onSubmit = (data: EmailType) => {
-        //  логика обработки формы
-        console.log(data);
-        // Проверка, что email валиден, прежде чем переходить
-        if (!errors.email) {
-            // Вызывайте navigate только при успешной валидации
-            navigate(PathConstant.PUBLIC_ROUTES.CHECK_EMAIL)
+    const onSubmit = async (data: EmailType) => {
+        try {
+            if (!errors.email) {
+                await recoverPassword({
+                    email: data.email,
+                })
+                    .unwrap()
+                    .then((res) => {
+                        dispatch(setEmail(data.email))
+                        showToast(res.message, 'success')
+                    })
+                    .catch()
+
+                navigate(PathConstant.PUBLIC_ROUTES.CHECK_EMAIL)
+            }
+        } catch (e) {
+            const mayBeError = isErrorWithMessage(e)
+            if (mayBeError) {
+                showToast(e.data.message, 'error')
+            } else {
+                showToast('Что-то пошло не так 😬', 'error')
+            }
         }
+
     };
 
     return (

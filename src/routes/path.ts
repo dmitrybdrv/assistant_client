@@ -13,9 +13,9 @@ export const PathConstant = {
     PUBLIC_ROUTES: {
         AUTH: '/api',
         SIGN_IN: '/api/user/login',
-        SIGN_UP: '/api/sign-up',
-        FORGOT_PASSWORD: '/api/forgot-password-form',
-        CREATE_NEW_PASSWORD: '/api/create-new-password-form/:token',
+        SIGN_UP: '/api/user/register',
+        FORGOT_PASSWORD: '/api/user/forgot-password',
+        CREATE_NEW_PASSWORD: '/api/user/recovery',
         CHECK_EMAIL: '/api/check-email-notification',
         SUCCESS_RESET_PASSWORD: '/api/success-reset-password-notification',
         SUCCESS_SIGN_UP: '/api/success-sign-up-notification',
