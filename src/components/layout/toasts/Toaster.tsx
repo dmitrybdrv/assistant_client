@@ -9,7 +9,7 @@ export const Toaster = () => <ToastContainer
     rtl={false}
     pauseOnFocusLoss
     draggable
-    pauseOnHover
+    pauseOnHover={false}
     theme="colored"
     stacked
     transition={Slide}
