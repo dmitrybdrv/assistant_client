@@ -5,9 +5,8 @@ export const useToast = () => {
     const showToast = (message: string, type: ToastType, options?: ToastOptions) => {
 
         const toastOptions: ToastOptions = {
-            autoClose: 3000,
-            pauseOnFocusLoss: false,
             toastId: new Date().toDateString(),
+            autoClose: 5000,
             ...options,
         }
 
