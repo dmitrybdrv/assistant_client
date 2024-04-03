@@ -31,6 +31,13 @@ const slice = createSlice({
                     state.notifications = 'Ok'
                 }
             )
+            .addMatcher(
+                (action: Action) => action.type.endsWith('/rejected'),
+                (state) => {
+                    state.isLoading = 'idle'
+                    state.notifications = 'ERROR'
+                }
+            )
     }
 })
 
