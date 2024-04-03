@@ -1,5 +1,6 @@
 import {Action, createSlice} from "@reduxjs/toolkit"
 import {LoadingState} from "src/types";
+import {RootState} from "src/store";
 
 export type InitialStateType = {
     isLoading: LoadingState
@@ -34,3 +35,4 @@ const slice = createSlice({
 })
 
 export default slice.reducer
+export const appLoadingSelectors = (state: RootState) => state.app.isLoading
