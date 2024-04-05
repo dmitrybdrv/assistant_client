@@ -27,7 +27,7 @@ export const nameSchema = z.object({
 @params .min - минимальное количество знаков
 @params .max - ьаксимальное количество знаков
  */
-const passwordSchema = z.object({
+export const passwordSchema = z.object({
     password: z
         .string()
         .min(1, 'Field is required')

@@ -53,5 +53,3 @@ export function SignInPage() {
         </section>
     )
 }
-
-//TODO раскоментировать лоадер. Создать визуализацию загрузки

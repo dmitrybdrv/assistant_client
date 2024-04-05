@@ -1,15 +1,15 @@
 import { clsx } from 'clsx'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
 import _bp from 'src/styles/boilerPlateTheme.module.scss'
 import {Button, Card, TextField, Typography} from "../../../ui";
-import {PasswordType} from "src/types";
-import {PathConstant} from "src/routes";
+import {FormPropsType, PasswordType} from "src/types";
+import {zodResolver} from "@hookform/resolvers/zod";
+import {passwordSchema} from "src/common";
 
 /*
 Форма страницы создания нового пароля
  */
-export const CreateNewPassword = () => {
+export const CreateNewPassword = ({onSubmit}: FormPropsType<PasswordType> ) => {
 
     const typographyStyle = clsx(_bp.footnote, _bp.footnoteExtra)
 
@@ -18,15 +18,14 @@ export const CreateNewPassword = () => {
         handleSubmit,
         formState: { errors },
     } = useForm({
+        resolver: zodResolver(passwordSchema),
         defaultValues: {
             password: '',
         },
         mode: 'onSubmit',
     })
 
-    const onSubmit = (data: PasswordType) => {
-        console.log(data)
-    }
+
 
     return (
         <Card className={_bp.formWrapper}>
@@ -50,11 +49,9 @@ export const CreateNewPassword = () => {
                     Create new password and we will send you further instructions to email
                 </Typography>
 
-                <Link to={PathConstant.PUBLIC_ROUTES.SUCCESS_RESET_PASSWORD}>
-                    <Button type={'submit'} fullWidth={true} className={_bp.btn}>
-                        <Typography variant={'subtitle2'}>Create New Password</Typography>
-                    </Button>
-                </Link>
+                <Button fullWidth={true} variant={'primary'} disabled={false} className={_bp.btn}>
+                    <Typography variant={'subtitle2'}>Create New Password</Typography>
+                </Button>
 
             </form>
         </Card>
