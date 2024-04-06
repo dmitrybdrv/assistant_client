@@ -2,14 +2,13 @@ import {createBrowserRouter, Navigate, RouteObject} from "react-router-dom";
 
 import {PathConstant} from "./path.ts";
 import App from "src/app/App.tsx";
-import {MainPage, SignInPage, SignUpPage} from "src/pages";
+import {CreateNewPasswordPage, MainPage, SignInPage, SignUpPage} from "src/pages";
 import {
     CheckEmail,
-    CreateNewPassword, ErrorPage,
+    ErrorPage,
     ForgotPassword,
     Layout,
     SuccessResetPassword,
-    SuccessSignUp
 } from "src/components";
 
 const publicRoutes: RouteObject[] = [
@@ -31,7 +30,7 @@ const publicRoutes: RouteObject[] = [
                     },
                     {
                         path: PathConstant.PUBLIC_ROUTES.CREATE_NEW_PASSWORD,
-                        element: <CreateNewPassword />,
+                        element: <CreateNewPasswordPage />,
                     },
                     {
                         path: PathConstant.PUBLIC_ROUTES.CHECK_EMAIL,
@@ -41,10 +40,10 @@ const publicRoutes: RouteObject[] = [
                         path: PathConstant.PUBLIC_ROUTES.SUCCESS_RESET_PASSWORD,
                         element: <SuccessResetPassword />,
                     },
-                    {
-                        path: PathConstant.PUBLIC_ROUTES.SUCCESS_SIGN_UP,
-                        element: <SuccessSignUp />,
-                    },
+                    // {
+                    //     path: PathConstant.PUBLIC_ROUTES.SUCCESS_SIGN_UP,
+                    //     element: <SuccessSignUp />,
+                    // },
                 ],
             },
 ]
