@@ -1,7 +1,7 @@
 import {baseApi} from "../baseApi.ts";
 import {
     EmailType,
-    LoginArgsType,
+    LoginArgsType, MessageFromBack, PasswordType,
     RegisterArgsType,
     ResponseUserData,
     UserData
@@ -34,16 +34,33 @@ export const authService = baseApi.injectEndpoints({
             }),
             providesTags: ['User']
         }),
-        //Восстановление пароля
+        //Восстановление пароля, сброс пароля на почту
         //TODO временно вместо void messageType
-        recoverPassword: builder.mutation<{message: string}, EmailType>({
+        recoverPassword: builder.mutation<MessageFromBack, EmailType>({
             query: body => ({
-                url: '/user/recovery',
+                url: '/user/forgot-password',
                 method: 'POST',
                 body,
             }),
         }),
+        //Создание нового пароля
+        createNewPass: builder.mutation<MessageFromBack, {password: PasswordType, id: string}>({
+            query: data => ({
+                url: '/user/create-new-password',
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${data.id}`,
+                },
+                data: data.password,
+            })
+        })
     })
 })
 
-export const {useCurrentQuery, useLoginMutation, useRegisterMutation, useRecoverPasswordMutation} = authService
+export const {
+    useCurrentQuery,
+    useLoginMutation,
+    useRegisterMutation,
+    useRecoverPasswordMutation,
+    useCreateNewPassMutation,
+} = authService

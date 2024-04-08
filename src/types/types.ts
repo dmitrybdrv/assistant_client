@@ -54,6 +54,8 @@ export type RecoverPassword = {
     subject?: string
 }
 
+export type MessageFromBack = {message: string}
+
 export type PasswordType = Pick<UserData, 'password'>
 
 export type EmailType = Pick<UserData, 'email'>

@@ -26,7 +26,6 @@ export const CreateNewPassword = ({onSubmit}: FormPropsType<PasswordType> ) => {
     })
 
 
-
     return (
         <Card className={_bp.formWrapper}>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -49,7 +48,7 @@ export const CreateNewPassword = ({onSubmit}: FormPropsType<PasswordType> ) => {
                     Create new password and we will send you further instructions to email
                 </Typography>
 
-                <Button fullWidth={true} variant={'primary'} disabled={false} className={_bp.btn}>
+                <Button type={'submit'} fullWidth={true} variant={'primary'} disabled={false} className={_bp.footnote}>
                     <Typography variant={'subtitle2'}>Create New Password</Typography>
                 </Button>
 
