@@ -35,7 +35,6 @@ export const authService = baseApi.injectEndpoints({
             providesTags: ['User']
         }),
         //Восстановление пароля, сброс пароля на почту
-        //TODO временно вместо void messageType
         recoverPassword: builder.mutation<MessageFromBack, EmailType>({
             query: body => ({
                 url: '/user/forgot-password',
