@@ -2,7 +2,7 @@ import {Slide, ToastContainer} from "react-toastify";
 
 export const Toaster = () => <ToastContainer
     position="top-center"
-    hideProgressBar={false}
+    hideProgressBar={true}
     newestOnTop={false}
     rtl={false}
     draggable
@@ -10,4 +10,5 @@ export const Toaster = () => <ToastContainer
     theme="colored"
     stacked
     transition={Slide}
+    autoClose={2000}
 />

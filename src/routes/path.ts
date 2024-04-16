@@ -15,6 +15,7 @@ export const PathConstant = {
         SIGN_IN: '/api/user/login',
         SIGN_UP: '/api/user/register',
         FORGOT_PASSWORD: '/api/user/forgot-password',
+        //TODO перенести данный роут в приватные '/api/user/create-new-password'
         CREATE_NEW_PASSWORD: '/api/user/create-new-password/:token',
         CHECK_EMAIL: '/api/user/check-email-notification',
         SUCCESS_RESET_PASSWORD: '/api/user/success-reset-password-notification',

@@ -43,14 +43,14 @@ export const authService = baseApi.injectEndpoints({
             }),
         }),
         //Создание нового пароля
-        createNewPass: builder.mutation<MessageFromBack, {password: PasswordType, id: string}>({
+        createNewPass: builder.mutation<MessageFromBack, PasswordType>({
             query: data => ({
-                url: '/user/create-new-password',
+                url: `/user/create-new-password`,
                 method: 'POST',
-                headers: {
-                    Authorization: `Bearer ${data.id}`,
-                },
-                data: data.password,
+                // headers: {
+                //     Authorization: `Bearer ${data.id}`,
+                // },
+                data,
             })
         })
     })
