@@ -31,9 +31,7 @@ export const ForgotPassword = () => {
     const onSubmit = async (data: EmailType) => {
         try {
             if (!errors.email) {
-                await recoverPassword({
-                    email: data.email,
-                })
+                await recoverPassword(data)
                     .unwrap()
                     .then((res) => {
                         dispatch(setEmail(data.email))
@@ -43,7 +41,8 @@ export const ForgotPassword = () => {
 
                 navigate(PathConstant.PUBLIC_ROUTES.CHECK_EMAIL)
             }
-        } catch (e) {
+        }
+        catch (e) {
             const mayBeError = isErrorWithMessage(e)
             if (mayBeError) {
                 showToast(e.data.message, 'error')

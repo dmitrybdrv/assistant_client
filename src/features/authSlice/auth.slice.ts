@@ -34,6 +34,9 @@ const slice = createSlice({
                 //TODO дописать логику
                 state.isAuthenticate = true
             })
+            .addMatcher(authService.endpoints.recoverPassword.matchFulfilled, (state) => {
+                state.isAuthenticate = true
+            })
     }
 })
 

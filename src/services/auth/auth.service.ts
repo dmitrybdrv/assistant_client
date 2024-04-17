@@ -1,7 +1,7 @@
 import {baseApi} from "../baseApi.ts";
 import {
     EmailType,
-    LoginArgsType, MessageFromBack, PasswordType,
+    LoginArgsType, MessageFromBack,
     RegisterArgsType,
     ResponseUserData,
     UserData
@@ -43,14 +43,14 @@ export const authService = baseApi.injectEndpoints({
             }),
         }),
         //Создание нового пароля
-        createNewPass: builder.mutation<MessageFromBack, PasswordType>({
+        createNewPass: builder.mutation<MessageFromBack, {password: string, token: string}>({
             query: data => ({
                 url: `/user/create-new-password`,
                 method: 'POST',
-                // headers: {
-                //     Authorization: `Bearer ${data.id}`,
-                // },
-                data,
+                headers: {
+                    Authorization: `Bearer ${data.token}`,
+                },
+                data: data.password,
             })
         })
     })
