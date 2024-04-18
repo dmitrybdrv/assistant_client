@@ -20,5 +20,5 @@ const slice = createSlice({
 
 export default slice.reducer
 
-export const { setEmail } = slice.actions
+export const emailActions = slice.actions
 export const userEmailSelector = (state: RootState) => state.email.value

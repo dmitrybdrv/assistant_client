@@ -2,13 +2,12 @@ import {createBrowserRouter, Navigate, RouteObject} from "react-router-dom";
 
 import {PathConstant} from "./path.ts";
 import App from "src/app/App.tsx";
-import {CreateNewPasswordPage, MainPage, SignInPage, SignUpPage} from "src/pages";
+import {CreateNewPasswordPage, ForgotPasswordPage, MainPage, SignInPage, SignUpPage} from "src/pages";
 import {
     CheckEmail,
     ErrorPage,
-    ForgotPassword,
     Layout,
-    SuccessResetPassword,
+    SuccessResetPassword, SuccessSignUp,
 } from "src/components";
 
 const publicRoutes: RouteObject[] = [
@@ -26,11 +25,7 @@ const publicRoutes: RouteObject[] = [
                     },
                     {
                         path: PathConstant.PUBLIC_ROUTES.FORGOT_PASSWORD,
-                        element: <ForgotPassword />,
-                    },
-                    {
-                        path: PathConstant.PUBLIC_ROUTES.CREATE_NEW_PASSWORD,
-                        element: <CreateNewPasswordPage />,
+                        element: <ForgotPasswordPage />,
                     },
                     {
                         path: PathConstant.PUBLIC_ROUTES.CHECK_EMAIL,
@@ -40,10 +35,10 @@ const publicRoutes: RouteObject[] = [
                         path: PathConstant.PUBLIC_ROUTES.SUCCESS_RESET_PASSWORD,
                         element: <SuccessResetPassword />,
                     },
-                    // {
-                    //     path: PathConstant.PUBLIC_ROUTES.SUCCESS_SIGN_UP,
-                    //     element: <SuccessSignUp />,
-                    // },
+                    {
+                        path: PathConstant.PUBLIC_ROUTES.SUCCESS_SIGN_UP,
+                        element: <SuccessSignUp />,
+                    },
                 ],
             },
 ]
@@ -53,6 +48,10 @@ const privateRoutes: RouteObject[] = [
         path: PathConstant.PRIVATE_ROUTES.HOME,
         element: <Layout />,
         children: [
+            {
+                path: PathConstant.PRIVATE_ROUTES.CREATE_NEW_PASSWORD,
+                element: <CreateNewPasswordPage />,
+            },
             {
                 path: PathConstant.PRIVATE_ROUTES.HOME,
                 element: <MainPage/>

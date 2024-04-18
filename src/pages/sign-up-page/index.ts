@@ -1,1 +1,1 @@
-export * from './sign-up-page.tsx'
+export * from './signUp-page.tsx'

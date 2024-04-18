@@ -20,22 +20,19 @@ export const CreateNewPasswordPage = () => {
                 setToken({token})
                 await createNewPass(data)
                     .unwrap()
-                    .then((res) => {
-                        showToast(res.message, 'success')
+                    .then(() => {
                         navigate(PathConstant.PUBLIC_ROUTES.SUCCESS_RESET_PASSWORD)
                     })
                     .catch()
         }
         catch (e) {
             const mayBeError = isErrorWithMessage(e)
-
             if (mayBeError) {
                 showToast(e.data.message, 'error')
             } else {
                 showToast('Что-то пошло не так 😬', 'error')
             }
         }
-
     }
 
     return <CreateNewPassword onSubmit={onNewPasswordCreate}/>

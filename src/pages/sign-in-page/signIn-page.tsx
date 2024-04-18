@@ -19,7 +19,6 @@ export function SignInPage() {
     const login = async (data: LoginArgsType) => {
 
         try {
-
             await userLogin(data)
                 .unwrap()
                 .then((res) => {
@@ -28,10 +27,9 @@ export function SignInPage() {
                 })
                 .catch()
 
-        } catch (e) {
-
+        }
+        catch (e) {
             const mayBeError = isErrorWithMessage(e)
-
             if (mayBeError) {
                 showToast(e.data.message, 'error')
             } else {
@@ -47,9 +45,5 @@ export function SignInPage() {
         }
     }, [navigate, user])
 
-    return (
-        <section className={themeStyle}>
-            <SignIn onSubmit={login}/>
-        </section>
-    )
+    return <section className={themeStyle}> <SignIn onSubmit={login}/> </section>
 }

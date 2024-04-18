@@ -19,26 +19,19 @@ export function SignUpPage() {
             await userRegister(data)
                 .unwrap()
                 .then(() => {
-                    showToast('Отлично, зарегистрированы😇! теперь войдите в аккаунт', 'success')
-                    navigate(PathConstant.PUBLIC_ROUTES.SIGN_IN)
+                    navigate(PathConstant.PUBLIC_ROUTES.SUCCESS_SIGN_UP)
                 })
                 .catch()
-        } catch (e) {
-
+        }
+        catch (e) {
             const mayBeError = isErrorWithMessage(e)
             if (mayBeError) {
                 showToast(e.data.message, 'error')
             } else {
                 showToast('Что-то пошло не так 😬', 'error')
             }
-
         }
     }
 
-
-    return (
-        <section className={themeStyle}>
-            <SignUp onSubmit={register}/>
-        </section>
-    )
+    return <section className={themeStyle}> <SignUp onSubmit={register}/> </section>
 }

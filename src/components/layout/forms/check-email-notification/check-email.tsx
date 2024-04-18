@@ -24,7 +24,7 @@ export const CheckEmail = () => {
 
                 <Typography variant={'body2'} className={typographyStyle}>
                     {`We have sent an Email with instructions to ${email}`}
-                </Typography>
+                    </Typography>
 
                 <CheckEmailImg className={_bp.emailIcon}/>
 
