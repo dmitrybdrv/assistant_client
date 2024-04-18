@@ -2,27 +2,31 @@ import {CreateNewPassword, useToast} from "src/components";
 import {PasswordType} from "src/types";
 import {isErrorWithMessage} from "src/common";
 import {useCreateNewPassMutation} from "src/services";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
+import {useActions} from "src/common/hooks/useActions.ts";
+import {PathConstant} from "src/routes";
 
 export const CreateNewPasswordPage = () => {
 
     const {showToast} = useToast()
     const [createNewPass] = useCreateNewPassMutation()
     const {token} = useParams<{ token: string }>()
-
+    const {setToken} = useActions()
+    const navigate = useNavigate()
     const onNewPasswordCreate = async (data: PasswordType) => {
 
         try {
-            console.log({password: data.password, token: token})
             if (token)
-                await createNewPass({password: data.password, token})
+                setToken({token})
+                await createNewPass(data)
                     .unwrap()
                     .then((res) => {
                         showToast(res.message, 'success')
+                        navigate(PathConstant.PUBLIC_ROUTES.SUCCESS_RESET_PASSWORD)
                     })
                     .catch()
-
-        } catch (e) {
+        }
+        catch (e) {
             const mayBeError = isErrorWithMessage(e)
 
             if (mayBeError) {
