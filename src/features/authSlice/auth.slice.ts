@@ -41,7 +41,7 @@ const slice = createSlice({
 })
 
 export default slice.reducer
-export const {logout} = slice.actions
+export const authAction = slice.actions
 
 //TODO вынести селекты в отдельный фаил
 export const selectIsAuthenticate = (state: RootState) => state.auth.isAuthenticate

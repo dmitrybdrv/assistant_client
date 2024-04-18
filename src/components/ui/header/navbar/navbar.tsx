@@ -1,16 +1,17 @@
 import s from './navbar.module.scss'
 import {Button} from "../../button";
-import {useAppDispatch, useToast} from "src/common";
-import {logout} from "src/features";
+import {useToast} from "src/common";
+import {useActions} from "src/common/hooks/useActions.ts";
 
 
 export function Navbar() {
 
-    const dispatch = useAppDispatch()
     const {showToast} = useToast()
+    const {logout} = useActions()
+
     const outHandler = () => {
         try {
-            dispatch(logout())
+            logout()
             showToast('Bye!!!', 'success')
         } catch (e) {
             console.log(e)
