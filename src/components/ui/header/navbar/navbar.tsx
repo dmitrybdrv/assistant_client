@@ -1,7 +1,7 @@
 import s from './navbar.module.scss'
 import {Button} from "../../button";
-import {useToast} from "src/common";
 import {useActions} from "src/common/hooks/useActions.ts";
+import {useToast} from "src/components";
 
 
 export function Navbar() {

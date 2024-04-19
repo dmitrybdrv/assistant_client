@@ -2,8 +2,7 @@ import {ForgotPassword, useToast} from "src/components";
 import {useNavigate} from "react-router-dom";
 import {EmailType} from "src/types";
 import {PathConstant} from "src/routes";
-import {isErrorWithMessage} from "src/common";
-import {useActions} from "src/common/hooks/useActions.ts";
+import {isErrorWithMessage, useActions} from "src/common";
 import {useRecoverPasswordMutation} from "src/services";
 
 export const ForgotPasswordPage = () =>{
@@ -17,9 +16,8 @@ export const ForgotPasswordPage = () =>{
         try {
                 await recoverPassword(data)
                     .unwrap()
-                    .then((res) => {
+                    .then(() => {
                         setEmail(data.email)
-                        showToast(res.message, 'success')
                     })
                     .catch()
                 navigate(PathConstant.PUBLIC_ROUTES.CHECK_EMAIL)

@@ -4,15 +4,20 @@ import {Link} from "react-router-dom";
 import {CheckEmailImg} from "src/assets";
 import {PathConstant} from "src/routes";
 import {Button, Card, Typography} from "src/components";
-import {useAppSelector} from "src/common";
+import {useAppSelector, useLocalStorage} from "src/common";
 import {userEmailSelector} from "src/features";
 
 /*
 Форма-уведомление о проверки почты, на которую отправлена инструкция по востановлению доступа
  */
 export const CheckEmail = () => {
-    const typographyStyle = clsx(_bp.footnote, _bp.footnoteTextCenter)
+    const typographyStyle = clsx(_bp.footnote, _bp.footNoteTextCenter)
     const email = useAppSelector(userEmailSelector)
+    const {setItem, getItem} = useLocalStorage('email')
+
+    if(email) setItem(email)
+
+    const myEmail =  getItem()
 
     return (
         <Card className={_bp.formWrapper}>
@@ -23,8 +28,9 @@ export const CheckEmail = () => {
                 </Typography>
 
                 <Typography variant={'body2'} className={typographyStyle}>
-                    {`We have sent an Email with instructions to ${email}`}
-                    </Typography>
+                    {'We have sent an Email with instructions to '}
+                    <strong>{myEmail}</strong>
+                </Typography>
 
                 <CheckEmailImg className={_bp.emailIcon}/>
 
