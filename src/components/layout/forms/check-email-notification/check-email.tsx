@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import _bp from 'src/styles/boilerPlateTheme.module.scss'
 import {Link} from "react-router-dom";
 import {CheckEmailImg} from "src/assets";
@@ -11,7 +10,6 @@ import {userEmailSelector} from "src/features";
 Форма-уведомление о проверки почты, на которую отправлена инструкция по востановлению доступа
  */
 export const CheckEmail = () => {
-    const typographyStyle = clsx(_bp.footnote, _bp.footNoteTextCenter)
     const email = useAppSelector(userEmailSelector)
     const {setItem, getItem} = useLocalStorage('email')
 
@@ -27,7 +25,7 @@ export const CheckEmail = () => {
                     Check Email
                 </Typography>
 
-                <Typography variant={'body2'} className={typographyStyle}>
+                <Typography variant={'body2'} className={_bp.footnote}>
                     {'We have sent an Email with instructions to '}
                     <strong>{myEmail}</strong>
                 </Typography>
