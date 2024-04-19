@@ -1,5 +1,5 @@
-import clsx from "clsx";
-import {useTheme} from "src/common";
+import clsx from 'clsx'
+import {useTheme} from 'src/common'
 
 type StyleType = {
     [key: string]: string
@@ -20,4 +20,4 @@ export const useThemeStyles = (moduleFileName: StyleType, classNamesStyles: stri
     )
 
     return {themeStyle}
-};
+}

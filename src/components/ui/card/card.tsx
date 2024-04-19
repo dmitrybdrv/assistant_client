@@ -1,6 +1,6 @@
 import { FC, forwardRef, HTMLProps, ReactNode, RefAttributes } from 'react'
+import {useThemeStyles} from 'src/common'
 import s from './card.module.scss'
-import {useThemeStyles} from "src/common";
 
 type CardProps = {
     children: ReactNode

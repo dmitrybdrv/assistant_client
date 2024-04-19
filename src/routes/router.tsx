@@ -1,14 +1,13 @@
-import {createBrowserRouter, Navigate, RouteObject} from "react-router-dom";
-
-import {PathConstant} from "./path.ts";
-import App from "src/app/App.tsx";
-import {CreateNewPasswordPage, ForgotPasswordPage, MainPage, SignInPage, SignUpPage} from "src/pages";
+import {CreateNewPasswordPage, ForgotPasswordPage, MainPage, SignInPage, SignUpPage} from 'src/pages'
+import {createBrowserRouter, Navigate, RouteObject} from 'react-router-dom'
+import {PathConstant} from './path.ts'
+import App from 'src/app/App.tsx'
 import {
     CheckEmail,
     ErrorPage,
     Layout,
     SuccessResetPassword, SuccessSignUp,
-} from "src/components";
+} from 'src/components'
 
 const publicRoutes: RouteObject[] = [
    {
@@ -58,7 +57,7 @@ const privateRoutes: RouteObject[] = [
              },
         ],
     },
-];
+]
 
 export const router = createBrowserRouter([
     {
@@ -74,4 +73,4 @@ export const router = createBrowserRouter([
         path: '*',
         element: <Navigate to={PathConstant.ERROR_PAGE} />,
     },
-]);
+])

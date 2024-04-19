@@ -1,10 +1,10 @@
 import { clsx } from 'clsx'
 import { useForm } from 'react-hook-form'
 import _bp from 'src/styles/boilerPlateTheme.module.scss'
-import {Button, Card, TextField, Typography} from "../../../ui";
-import {FormPropsType, PasswordType} from "src/types";
-import {zodResolver} from "@hookform/resolvers/zod";
-import {passwordSchema} from "src/common";
+import {FormPropsType, PasswordType} from 'src/types'
+import {zodResolver} from '@hookform/resolvers/zod'
+import {passwordSchema} from 'src/common'
+import {Button, Card, TextField, Typography} from 'src/components'
 
 /*
 Форма страницы создания нового пароля

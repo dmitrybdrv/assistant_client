@@ -1,7 +1,7 @@
-import {ComponentPropsWithoutRef, ElementType, ReactNode} from "react";
-import s from './button.module.scss'
+import {ComponentPropsWithoutRef, ElementType, ReactNode} from 'react'
 import _bp from 'src/styles/boilerPlateTheme.module.scss'
-import {useThemeStyles} from "src/common";
+import {useThemeStyles} from 'src/common'
+import s from './button.module.scss'
 /*
 Полиморфный компонент - кнопка
  */

@@ -1,8 +1,8 @@
-import {FC} from "react";
+import * as Checkbox from '@radix-ui/react-checkbox'
+import {CheckIcon, UnCheckIcon} from 'src/assets'
 import s from './checkbox.module.scss'
-import * as Checkbox from '@radix-ui/react-checkbox';
-import clsx from "clsx";
-import {CheckIcon, UnCheckIcon} from "src/assets";
+import {FC} from 'react'
+import clsx from 'clsx'
 
 type Props = {
     disabled?: boolean

@@ -1,11 +1,10 @@
-import s from './header.module.scss'
-import {Navbar} from "./navbar";
+import {Switcher} from 'src/components/ui/header/switcher'
+import _bp from 'src/styles/boilerPlateTheme.module.scss'
+import {useAppSelector, useThemeStyles} from 'src/common'
 import logo from '../../../assets/img/logo1.svg'
-import _bp from "src/styles/boilerPlateTheme.module.scss";
-import {useAppSelector, useThemeStyles} from "src/common";
-import {Switcher} from "src/components/ui/header/switcher";
-import {selectUser} from "src/features";
-
+import {selectUser} from 'src/features'
+import s from './header.module.scss'
+import {Navbar} from './navbar'
 
 export function Header() {
 

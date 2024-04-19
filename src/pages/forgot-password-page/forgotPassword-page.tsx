@@ -1,9 +1,9 @@
-import {ForgotPassword, useToast} from "src/components";
-import {useNavigate} from "react-router-dom";
-import {EmailType} from "src/types";
-import {PathConstant} from "src/routes";
-import {isErrorWithMessage, useActions} from "src/common";
-import {useRecoverPasswordMutation} from "src/services";
+import {isErrorWithMessage, useActions, useToast} from 'src/common'
+import {useRecoverPasswordMutation} from 'src/services'
+import {ForgotPassword} from 'src/components'
+import {useNavigate} from 'react-router-dom'
+import {PathConstant} from 'src/routes'
+import {EmailType} from 'src/types'
 
 export const ForgotPasswordPage = () =>{
     const navigate = useNavigate()

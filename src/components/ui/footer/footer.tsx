@@ -1,6 +1,6 @@
-import s from './footer.module.scss'
 import _bp from 'src/styles/boilerPlateTheme.module.scss'
-import {useThemeStyles} from "src/common";
+import {useThemeStyles} from 'src/common'
+import s from './footer.module.scss'
 
 export function Footer() {
 

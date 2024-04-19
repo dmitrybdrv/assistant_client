@@ -1,4 +1,4 @@
-import {isRouteErrorResponse, useRouteError} from "react-router-dom";
+import {isRouteErrorResponse, useRouteError} from 'react-router-dom'
 
 export const ErrorPage = () => {
     const error = useRouteError()
@@ -16,6 +16,6 @@ export const ErrorPage = () => {
                     feel like this is a mistake.
                 </p>
             </div>
-        );
+        )
     }
 }

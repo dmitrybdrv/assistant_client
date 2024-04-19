@@ -1,6 +1,5 @@
-import {Action, createSlice} from "@reduxjs/toolkit"
-import {LoadingState} from "src/types";
-import {RootState} from "src/store";
+import {Action, createSlice} from '@reduxjs/toolkit'
+import {LoadingState} from 'src/types'
 
 export type InitialStateType = {
     isLoading: LoadingState
@@ -8,7 +7,7 @@ export type InitialStateType = {
 }
 
 const initialState: InitialStateType = {
-    isLoading: "idle",
+    isLoading: 'idle',
     notifications: null
 }
 
@@ -42,4 +41,3 @@ const slice = createSlice({
 })
 
 export default slice.reducer
-export const appLoadingSelectors = (state: RootState) => state.app.isLoading

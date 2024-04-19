@@ -1,10 +1,10 @@
-import {CreateNewPassword, useToast} from "src/components";
-import {PasswordType} from "src/types";
-import {isErrorWithMessage} from "src/common";
-import {useCreateNewPassMutation} from "src/services";
-import {useNavigate, useParams} from "react-router-dom";
-import {useActions} from "src/common/hooks/useActions.ts";
-import {PathConstant} from "src/routes";
+import {useActions} from 'src/common/hooks/useActions.ts'
+import {isErrorWithMessage, useToast} from 'src/common'
+import {useNavigate, useParams} from 'react-router-dom'
+import {useCreateNewPassMutation} from 'src/services'
+import {CreateNewPassword} from 'src/components'
+import {PathConstant} from 'src/routes'
+import {PasswordType} from 'src/types'
 
 export const CreateNewPasswordPage = () => {
 

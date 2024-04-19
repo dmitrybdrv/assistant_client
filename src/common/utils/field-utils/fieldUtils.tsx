@@ -1,6 +1,6 @@
-import {HTMLInputTypeAttribute} from "react";
+import {HTMLInputTypeAttribute} from 'react'
 import s from 'src/components/ui/text-field/text-field.module.scss'
-import {ClosedEye, OpenEye} from "src/assets";
+import {ClosedEye, OpenEye} from 'src/assets'
 /*
 Функция - динамически определяет тип для поля ввода в зависимости от переданных аргументов.
 Основной сценарий использования - обработка типа 'password' и изменение его на 'text',

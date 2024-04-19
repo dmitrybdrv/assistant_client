@@ -1,6 +1,6 @@
-import {useAppDispatch} from "src/common";
-import {bindActionCreators} from "@reduxjs/toolkit";
-import {authAction, emailActions} from "src/features";
+import {useAppDispatch} from 'src/common'
+import {bindActionCreators} from '@reduxjs/toolkit'
+import {authAction, emailActions} from 'src/features'
 
 const allActions = {
     ...authAction,

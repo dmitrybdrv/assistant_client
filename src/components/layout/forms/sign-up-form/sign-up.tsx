@@ -1,11 +1,11 @@
+import {Button, Card, TextField, Typography} from 'src/components'
+import {FormPropsType, RegisterArgsType} from 'src/types'
 import _bp from 'src/styles/boilerPlateTheme.module.scss'
-import {zodResolver} from '@hookform/resolvers/zod';
-import {useForm} from "react-hook-form";
-import {Link} from "react-router-dom";
-import {FormPropsType, RegisterArgsType} from "src/types";
-import {signUpSchema} from "src/common";
-import {PathConstant} from "src/routes";
-import {Button, Card, TextField, Typography} from "src/components";
+import {zodResolver} from '@hookform/resolvers/zod'
+import {useForm} from 'react-hook-form'
+import {signUpSchema} from 'src/common'
+import {PathConstant} from 'src/routes'
+import {Link} from 'react-router-dom'
 
 
 /*

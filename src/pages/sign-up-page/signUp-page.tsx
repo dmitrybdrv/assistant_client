@@ -1,11 +1,10 @@
-import _bp from '../../styles/boilerPlateTheme.module.scss'
-import {isErrorWithMessage, useThemeStyles, useToast} from "src/common";
-import {useRegisterMutation} from "src/services";
-import {RegisterArgsType} from "src/types";
-import {SignUp} from "src/components";
-import {useNavigate} from "react-router-dom";
-import {PathConstant} from "src/routes";
-
+import {isErrorWithMessage, useThemeStyles, useToast} from 'src/common'
+import _bp from 'src/styles/boilerPlateTheme.module.scss'
+import {useRegisterMutation} from 'src/services'
+import {useNavigate} from 'react-router-dom'
+import {RegisterArgsType} from 'src/types'
+import {PathConstant} from 'src/routes'
+import {SignUp} from 'src/components'
 
 export function SignUpPage() {
     const navigate = useNavigate()

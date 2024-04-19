@@ -1,21 +1,14 @@
 import _bp from 'src/styles/boilerPlateTheme.module.scss'
-import {Link} from "react-router-dom";
-import {CheckEmailImg} from "src/assets";
-import {PathConstant} from "src/routes";
-import {Button, Card, Typography} from "src/components";
-import {useAppSelector, useLocalStorage} from "src/common";
-import {userEmailSelector} from "src/features";
+import {Button, Card, Typography} from 'src/components'
+import {CheckEmailImg} from 'src/assets'
+import {PathConstant} from 'src/routes'
+import {Link} from 'react-router-dom'
 
 /*
 Форма-уведомление о проверки почты, на которую отправлена инструкция по востановлению доступа
  */
 export const CheckEmail = () => {
-    const email = useAppSelector(userEmailSelector)
-    const {setItem, getItem} = useLocalStorage('email')
 
-    if(email) setItem(email)
-
-    const myEmail =  getItem()
 
     return (
         <Card className={_bp.formWrapper}>
@@ -27,7 +20,7 @@ export const CheckEmail = () => {
 
                 <Typography variant={'body2'} className={_bp.footnote}>
                     {'We have sent an Email with instructions to '}
-                    <strong>{myEmail}</strong>
+                    <strong>{'мой емаил'}</strong>
                 </Typography>
 
                 <CheckEmailImg className={_bp.emailIcon}/>

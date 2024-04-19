@@ -1,4 +1,4 @@
-import {z} from "zod";
+import {z} from 'zod'
 
 /*
 Валидация для проверки почтового адреса
@@ -62,5 +62,5 @@ export const signUpSchema = z.object({
 })
     .refine(data => data.password === data.confirmPassword, {
         path: ['confirmPassword'],
-        message: "Password don't match",
+        message: 'Password don\'t match',
     })

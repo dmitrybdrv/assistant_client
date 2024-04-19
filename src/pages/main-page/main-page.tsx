@@ -1,8 +1,8 @@
-import {PathConstant} from "src/routes";
-import {useNavigate} from "react-router-dom";
-import {useAppSelector} from "src/common";
-import {selectUser} from "src/features";
-import {useEffect} from "react";
+import {useNavigate} from 'react-router-dom'
+import {useAppSelector} from 'src/common'
+import {PathConstant} from 'src/routes'
+import {selectUser} from 'src/features'
+import {useEffect} from 'react'
 
 export const MainPage = () => {
 

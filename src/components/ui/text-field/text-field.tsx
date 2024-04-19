@@ -1,9 +1,9 @@
+import {ComponentPropsWithoutRef, FC, ForwardedRef, forwardRef, useState} from 'react'
+import {getIcon, getType, useThemeStyles} from 'src/common'
+import _bp from 'src/styles/boilerPlateTheme.module.scss'
+import {FieldError} from 'react-hook-form'
+import {Typography} from 'src/components'
 import s from './text-field.module.scss'
-import _bp from '../../../styles/boilerPlateTheme.module.scss'
-import {ComponentPropsWithoutRef, FC, ForwardedRef, forwardRef, useState} from "react";
-import {FieldError} from "react-hook-form";
-import {getIcon, getType, useThemeStyles} from "src/common";
-import {Typography} from "src/components";
 
 type Props = {
     label: string;
@@ -41,6 +41,6 @@ export const TextField: FC<Props> = forwardRef(
                     {error && error.message}
                 </Typography>
             </div>
-        );
+        )
     }
-);
+)

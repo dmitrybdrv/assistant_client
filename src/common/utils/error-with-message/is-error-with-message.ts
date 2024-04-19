@@ -1,4 +1,4 @@
-import {ErrorWithMessage} from "src/types";
+import {ErrorWithMessage} from 'src/types'
 export const isErrorWithMessage = (err: unknown): err is ErrorWithMessage => {
     return (
         typeof err === 'object' &&

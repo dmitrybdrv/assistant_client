@@ -1,5 +1,5 @@
-import {FC} from "react";
-import {Props} from "./icons.types.ts";
+import {FC} from 'react'
+import {Props} from './icons.types.ts'
 /*
 Иконка - открытый глаз (поле password)
  */

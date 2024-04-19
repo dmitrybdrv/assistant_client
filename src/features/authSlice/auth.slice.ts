@@ -1,8 +1,7 @@
-import {ResponseUserData} from "src/types";
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {authService} from "src/services";
-import {RootState} from "src/store";
-
+import {createSlice, PayloadAction} from '@reduxjs/toolkit'
+import {ResponseUserData} from 'src/types'
+import {authService} from 'src/services'
+import {RootState} from 'src/store'
 
 type InitialState = {
     user: ResponseUserData | null
@@ -50,5 +49,5 @@ export const authAction = slice.actions
 
 //TODO вынести селекты в отдельный фаил
 export const selectIsAuthenticate = (state: RootState) => state.auth.isAuthenticate
-export const selectUser = (state: RootState) => state.auth.user
+
 

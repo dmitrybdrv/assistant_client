@@ -1,11 +1,11 @@
-import {baseApi} from "../baseApi.ts";
+import {baseApi} from '../baseApi.ts'
 import {
     EmailType,
     LoginArgsType, MessageFromBack,
     RegisterArgsType,
     ResponseUserData,
     UserData
-} from "src/types";
+} from 'src/types'
 
 export const authService = baseApi.injectEndpoints({
     endpoints: (builder) => ({

@@ -4,7 +4,7 @@
  */
 export const isRestrictedRoute = (pathname: string): boolean => {
     // Ограниченые маршруты для пользователя
-    const restrictedRoutes = ['/auth/sign-up', '/auth/reset-password'];
+    const restrictedRoutes = ['/auth/sign-up', '/auth/reset-password']
 
-    return restrictedRoutes.includes(pathname);
-};
+    return restrictedRoutes.includes(pathname)
+}

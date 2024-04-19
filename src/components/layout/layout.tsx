@@ -1,8 +1,8 @@
 import _bp from 'src/styles/boilerPlateTheme.module.scss'
-import {Outlet} from "react-router-dom";
-import {useAppSelector, useThemeStyles} from "src/common";
-import {appLoadingSelectors} from "src/features";
-import {Loader} from "src/components";
+import {Outlet} from 'react-router-dom'
+import {useAppSelector, useThemeStyles} from 'src/common'
+import {appLoadingSelectors} from 'src/features'
+import {Loader} from 'src/components'
 
 
 export const Layout = () => {

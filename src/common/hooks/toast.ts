@@ -1,5 +1,5 @@
 import {toast, ToastOptions} from 'react-toastify'
-import {ToastType} from "src/types";
+import {ToastType} from 'src/types'
 
 export const useToast = () => {
 

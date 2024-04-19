@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import {RootState} from "src/store";
 
 interface EmailState {
     value: string
@@ -21,4 +20,3 @@ const slice = createSlice({
 export default slice.reducer
 
 export const emailActions = slice.actions
-export const userEmailSelector = (state: RootState) => state.email.value
