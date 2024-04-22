@@ -1,5 +1,5 @@
 export * from './create-new-password-page'
-export * from './forgot-password-page'
+export * from './recovery-password-page'
 export * from './main-page'
 export * from './sign-in-page'
 export * from './sign-up-page'

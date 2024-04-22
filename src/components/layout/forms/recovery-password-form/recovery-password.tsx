@@ -10,7 +10,7 @@ import {Button, Card, TextField, Typography} from 'src/components'
 /*
 Форма сброса пароля на указанную пользователем почту
  */
-export const ForgotPassword = ({onSubmit}: FormPropsType<EmailType>) => {
+export const RecoveryPassword = ({onSubmit}: FormPropsType<EmailType>) => {
 
     const {formState: {errors}, handleSubmit, register} = useForm<EmailType>({
         resolver: zodResolver(emailSchema),

@@ -1,11 +1,11 @@
 import {isErrorWithMessage, useActions, useToast} from 'src/common'
 import {useRecoverPasswordMutation} from 'src/services'
-import {ForgotPassword} from 'src/components'
+import {RecoveryPassword} from 'src/components'
 import {useNavigate} from 'react-router-dom'
 import {PathConstant} from 'src/routes'
 import {EmailType} from 'src/types'
 
-export const ForgotPasswordPage = () =>{
+export const ReoveryPasswordPage = () =>{
     const navigate = useNavigate()
     const {setEmail} = useActions()
     const [recoverPassword] = useRecoverPasswordMutation()
@@ -33,5 +33,5 @@ export const ForgotPasswordPage = () =>{
         }
     }
 
-    return <ForgotPassword onSubmit={onSubmit}/>
+    return <RecoveryPassword onSubmit={onSubmit}/>
 }

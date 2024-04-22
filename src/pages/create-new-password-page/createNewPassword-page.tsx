@@ -1,4 +1,3 @@
-import {useActions} from 'src/common/hooks/useActions.ts'
 import {isErrorWithMessage, useToast} from 'src/common'
 import {useNavigate, useParams} from 'react-router-dom'
 import {useCreateNewPassMutation} from 'src/services'
@@ -11,21 +10,19 @@ export const CreateNewPasswordPage = () => {
     const {showToast} = useToast()
     const [createNewPass] = useCreateNewPassMutation()
     const {token} = useParams<{ token: string }>()
-    const {setToken} = useActions()
     const navigate = useNavigate()
     const onNewPasswordCreate = async (data: PasswordType) => {
 
         try {
             if (token)
-                setToken({token})
-                await createNewPass(data)
-                    .unwrap()
-                    .then(() => {
-                        navigate(PathConstant.PUBLIC_ROUTES.SUCCESS_RESET_PASSWORD)
-                    })
-                    .catch()
-        }
-        catch (e) {
+                localStorage.setItem('token', token)
+            await createNewPass(data)
+                .unwrap()
+                .then(() => {
+                    navigate(PathConstant.PUBLIC_ROUTES.SUCCESS_RESET_PASSWORD)
+                })
+            localStorage.removeItem('token')
+        } catch (e) {
             const mayBeError = isErrorWithMessage(e)
             if (mayBeError) {
                 showToast(e.data.message, 'error')

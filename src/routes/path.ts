@@ -15,7 +15,7 @@ export const PathConstant = {
         AUTH: '/api',
         SIGN_IN: '/api/user/login',
         SIGN_UP: '/api/user/register',
-        FORGOT_PASSWORD: '/api/user/forgot-password',
+        FORGOT_PASSWORD: '/api/user/recovery-password',
         CHECK_EMAIL: '/api/user/check-email-notification',
         SUCCESS_RESET_PASSWORD: '/api/user/success-reset-password-notification',
         SUCCESS_SIGN_UP: '/api/user/success-sign-up-notification',

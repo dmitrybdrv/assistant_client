@@ -1,4 +1,4 @@
-import {CreateNewPasswordPage, ForgotPasswordPage, MainPage, SignInPage, SignUpPage} from 'src/pages'
+import {CreateNewPasswordPage, ReoveryPasswordPage, MainPage, SignInPage, SignUpPage} from 'src/pages'
 import {createBrowserRouter, Navigate, RouteObject} from 'react-router-dom'
 import {PathConstant} from './path.ts'
 import App from 'src/app/App.tsx'
@@ -24,7 +24,7 @@ const publicRoutes: RouteObject[] = [
                     },
                     {
                         path: PathConstant.PUBLIC_ROUTES.FORGOT_PASSWORD,
-                        element: <ForgotPasswordPage />,
+                        element: <ReoveryPasswordPage />,
                     },
                     {
                         path: PathConstant.PUBLIC_ROUTES.CHECK_EMAIL,
