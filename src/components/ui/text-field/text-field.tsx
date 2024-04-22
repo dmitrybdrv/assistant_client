@@ -20,6 +20,8 @@ export const TextField: FC<Props> = forwardRef(
 
         const showIcon = getIcon(icon, type, onShowIcon)
         const typeVariant = getType(icon, type)
+        //проверка для автокомплита
+        const onAutocompleteAttribute = type === 'email' || rest.name === 'email' ? 'email' : 'off'
 
         const errorStyle = error ? s.error : ''
         const {themeStyle} = useThemeStyles(_bp, [s.inputFl, errorStyle])
@@ -33,6 +35,7 @@ export const TextField: FC<Props> = forwardRef(
                     <input
                         ref={ref}
                         type={typeVariant}
+                        autoComplete={onAutocompleteAttribute}
                         {...rest}
                     />
                     {showIcon}

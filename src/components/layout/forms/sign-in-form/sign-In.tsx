@@ -34,6 +34,7 @@ export const SignIn = ({onSubmit}: FormPropsType<LoginArgsType>) => {
                     {...register('email')}
                     label={'Email'}
                     error={errors.email}
+                    name={'email'}
                 />
 
                 <TextField
@@ -41,6 +42,7 @@ export const SignIn = ({onSubmit}: FormPropsType<LoginArgsType>) => {
                     type={'password'}
                     label={'Password'}
                     error={errors.password}
+                    name={'password'}
                 />
 
                 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}
