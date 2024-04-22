@@ -34,5 +34,5 @@ export const ControlledCheckbox = <TFieldValues extends FieldValues>(
         shouldUnregister,
     })
 
-    return <CheckBox {...{checked: value, onChange, ...rest}} />
+    return <CheckBox {...{checked: value, onChange, name, ...rest}} />
 }
