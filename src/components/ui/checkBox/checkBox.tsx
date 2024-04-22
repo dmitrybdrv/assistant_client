@@ -36,6 +36,7 @@ export const CheckBox: FC<Props> = (
                 disabled={disabled}
                 checked={checked}
                 id={htmlId}
+                name={rest.name}
                 {...rest}
             >
                 { !disabled && (checked ?  <UnCheckIcon/> : <CheckIcon/>) }
