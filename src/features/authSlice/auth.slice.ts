@@ -1,17 +1,15 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit'
 import {ResponseUserData} from 'src/types'
 import {authService} from 'src/services'
 import {RootState} from 'src/store'
 
 type InitialState = {
     user: ResponseUserData | null
-    token: string
     isAuthenticate: boolean
 }
 
 const initialState: InitialState = {
     user: null,
-    token: '',
     isAuthenticate: false
 }
 
@@ -20,9 +18,6 @@ const slice = createSlice({
     initialState,
     reducers: {
         logout: () => initialState,
-        setToken: (state, action: PayloadAction<{token: string}>) => {
-            state.token = action.payload.token
-        }
     },
     extraReducers: builder => {
         builder
