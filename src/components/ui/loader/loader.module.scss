@@ -1,32 +1,32 @@
 .modalWrapper {
-  position:fixed;
-  display:flex;
-  width:100%;
-  height:100%;
-  justify-content:center;
-  align-items:center;
-  background:rgba(0,0,0,.3);
-  z-index:100;
-
-  .overlay {
-    position:absolute;
-    width:100%;
-    height:100%;
-    z-index:1;
-  }
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
 
   .modalWindow {
     display: flex;
     justify-content: center;
     align-items: center;
-    width:100%;
-    height: 100%;
-    z-index:2;
+    z-index: 2;
 
     .circle {
       position: absolute;
       width: 80px;
     }
   }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
