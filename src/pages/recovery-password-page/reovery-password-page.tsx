@@ -20,7 +20,7 @@ export const ReoveryPasswordPage = () =>{
                         setEmail(data.email)
                     })
                     .catch()
-                navigate(PathConstant.PUBLIC_ROUTES.CHECK_EMAIL)
+                navigate(PathConstant.PUBLIC_ROUTES.CHECK_EMAIL_PAGE)
 
         }
         catch (e) {

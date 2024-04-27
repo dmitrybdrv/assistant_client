@@ -56,7 +56,7 @@ export const SignIn = ({onSubmit}: FormPropsType<LoginArgsType>) => {
                     />
 
                     <Typography variant={'link1'}>
-                        <Link to={PathConstant.PUBLIC_ROUTES.FORGOT_PASSWORD}>
+                        <Link to={PathConstant.PUBLIC_ROUTES.RECOVERY_PASSWORD}>
                             Forgot Password?
                         </Link>
                     </Typography>
@@ -71,7 +71,7 @@ export const SignIn = ({onSubmit}: FormPropsType<LoginArgsType>) => {
                 </Typography>
 
                 <Typography variant={'link1'}>
-                    <Link className={_bp.linkWrapper} to={PathConstant.PUBLIC_ROUTES.SIGN_UP}>
+                    <Link className={_bp.linkWrapper} to={PathConstant.PUBLIC_ROUTES.SIGN_UP_PAGE}>
                         Sign Up
                     </Link>
                 </Typography>

@@ -15,27 +15,27 @@ const publicRoutes: RouteObject[] = [
                 element: <Layout />,
                 children: [
                     {
-                        path: PathConstant.PUBLIC_ROUTES.SIGN_IN,
+                        path: PathConstant.PUBLIC_ROUTES.SIGN_IN_PAGE,
                         element: <SignInPage />,
                     },
                     {
-                        path: PathConstant.PUBLIC_ROUTES.SIGN_UP,
+                        path: PathConstant.PUBLIC_ROUTES.SIGN_UP_PAGE,
                         element: <SignUpPage />,
                     },
                     {
-                        path: PathConstant.PUBLIC_ROUTES.FORGOT_PASSWORD,
+                        path: PathConstant.PUBLIC_ROUTES.RECOVERY_PASSWORD,
                         element: <ReoveryPasswordPage />,
                     },
                     {
-                        path: PathConstant.PUBLIC_ROUTES.CHECK_EMAIL,
+                        path: PathConstant.PUBLIC_ROUTES.CHECK_EMAIL_PAGE,
                         element: <CheckEmail />,
                     },
                     {
-                        path: PathConstant.PUBLIC_ROUTES.SUCCESS_RESET_PASSWORD,
+                        path: PathConstant.PUBLIC_ROUTES.SUCCESS_RESET_PASSWORD_PAGE,
                         element: <SuccessResetPassword />,
                     },
                     {
-                        path: PathConstant.PUBLIC_ROUTES.SUCCESS_SIGN_UP,
+                        path: PathConstant.PUBLIC_ROUTES.SUCCESS_SIGN_UP_PAGE,
                         element: <SuccessSignUp />,
                     },
                 ],
@@ -44,15 +44,15 @@ const publicRoutes: RouteObject[] = [
 
 const privateRoutes: RouteObject[] = [
     {
-        path: PathConstant.PRIVATE_ROUTES.HOME,
+        path: PathConstant.PRIVATE_ROUTES.MAIN_PAGE,
         element: <Layout />,
         children: [
             {
-                path: PathConstant.PRIVATE_ROUTES.CREATE_NEW_PASSWORD,
+                path: PathConstant.PRIVATE_ROUTES.CREATE_NEW_PASSWORD_PAGE,
                 element: <CreateNewPasswordPage />,
             },
             {
-                path: PathConstant.PRIVATE_ROUTES.HOME,
+                path: PathConstant.PRIVATE_ROUTES.MAIN_PAGE,
                 element: <MainPage/>
              },
         ],
@@ -61,7 +61,7 @@ const privateRoutes: RouteObject[] = [
 
 export const router = createBrowserRouter([
     {
-        path: PathConstant.PRIVATE_ROUTES.HOME,
+        path: PathConstant.PRIVATE_ROUTES.MAIN_PAGE,
         element: <App />,
         children: [...publicRoutes, ...privateRoutes],
     },

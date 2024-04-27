@@ -11,7 +11,7 @@ export const MainPage = () => {
 
     useEffect(() => {
         if (user === null) {
-            navigate(PathConstant.PUBLIC_ROUTES.SIGN_IN)
+            navigate(PathConstant.PUBLIC_ROUTES.SIGN_IN_PAGE)
         }
     }, [navigate, user])
 

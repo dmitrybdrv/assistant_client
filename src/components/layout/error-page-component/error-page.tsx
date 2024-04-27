@@ -1,8 +1,8 @@
 import {isRouteErrorResponse, useRouteError} from 'react-router-dom'
+import pageNotFound from 'src/assets/img/404_Page.png'
 
 export const ErrorPage = () => {
     const error = useRouteError()
-
 
     if (isRouteErrorResponse(error) && error.status === 401) {
         // the response json is automatically parsed to
@@ -18,4 +18,10 @@ export const ErrorPage = () => {
             </div>
         )
     }
+
+    return (
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+            <img src={pageNotFound} alt={'error_page'}/>
+        </div>
+    )
 }

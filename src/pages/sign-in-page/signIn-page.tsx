@@ -41,7 +41,7 @@ export function SignInPage() {
 
     useEffect(() => {
         if (user?.token) {
-            navigate(PathConstant.PRIVATE_ROUTES.HOME)
+            navigate(PathConstant.PRIVATE_ROUTES.MAIN_PAGE)
         }
     }, [navigate, user])
 

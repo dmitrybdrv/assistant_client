@@ -25,7 +25,7 @@ export const CheckEmail = () => {
 
                 <CheckEmailImg className={_bp.emailIcon}/>
 
-                <Link to={PathConstant.PUBLIC_ROUTES.SIGN_IN}>
+                <Link to={PathConstant.PUBLIC_ROUTES.SIGN_IN_PAGE}>
                     <Button fullWidth={true} className={_bp.btn}>
                         <Typography variant={'subtitle2'}>Back to Sign in</Typography>
                     </Button>

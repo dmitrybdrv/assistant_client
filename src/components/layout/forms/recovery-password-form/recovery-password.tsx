@@ -46,7 +46,7 @@ export const RecoveryPassword = ({onSubmit}: FormPropsType<EmailType>) => {
                 </Typography>
 
                 <Typography variant={'link1'} href={'#'}>
-                    <Link className={_bp.linkWrapper} to={PathConstant.PUBLIC_ROUTES.SIGN_IN}>
+                    <Link className={_bp.linkWrapper} to={PathConstant.PUBLIC_ROUTES.SIGN_IN_PAGE}>
                         Try logging in
                     </Link>
                 </Typography>

@@ -19,7 +19,7 @@ export const CreateNewPasswordPage = () => {
             await createNewPass(data)
                 .unwrap()
                 .then(() => {
-                    navigate(PathConstant.PUBLIC_ROUTES.SUCCESS_RESET_PASSWORD)
+                    navigate(PathConstant.PUBLIC_ROUTES.SUCCESS_RESET_PASSWORD_PAGE)
                 })
             localStorage.removeItem('token')
         } catch (e) {

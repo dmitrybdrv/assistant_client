@@ -19,7 +19,7 @@ export const SuccessResetPassword = () => {
         </Typography>
 
         <div>
-          <Link to={PathConstant.PUBLIC_ROUTES.SIGN_IN}>
+          <Link to={PathConstant.PUBLIC_ROUTES.SIGN_IN_PAGE}>
             <Button fullWidth={true} className={_bp.h1}>
               <Typography variant={'subtitle2'}>Return to Login</Typography>
             </Button>

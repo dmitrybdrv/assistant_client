@@ -59,7 +59,7 @@ export const SignUp = ({ onSubmit }: FormPropsType<RegisterArgsType>) => {
 
                 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}} className={_bp.field}>
                     <Typography variant={'link1'}>
-                        <Link to={PathConstant.PUBLIC_ROUTES.SIGN_IN}>
+                        <Link to={PathConstant.PUBLIC_ROUTES.SIGN_IN_PAGE}>
                             Already have an account?
                         </Link>
                     </Typography>

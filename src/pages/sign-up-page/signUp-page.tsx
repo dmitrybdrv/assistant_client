@@ -18,7 +18,7 @@ export function SignUpPage() {
             await userRegister(data)
                 .unwrap()
                 .then(() => {
-                    navigate(PathConstant.PUBLIC_ROUTES.SUCCESS_SIGN_UP)
+                    navigate(PathConstant.PUBLIC_ROUTES.SUCCESS_SIGN_UP_PAGE)
                 })
                 .catch()
         }
