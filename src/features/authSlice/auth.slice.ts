@@ -17,7 +17,11 @@ const slice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        logout: () => initialState,
+        logout: (state) => {
+            state.user = null
+            state.isAuthenticate = false
+            localStorage.removeItem('token')
+        }
     },
     extraReducers: builder => {
         builder
@@ -29,8 +33,9 @@ const slice = createSlice({
                 state.user = action.payload
                 state.isAuthenticate = true
             })
-            .addMatcher(authService.endpoints.current.matchFulfilled, (state) => {
+            .addMatcher(authService.endpoints.current.matchFulfilled, (state, action) => {
                 //TODO дописать логику
+                state.user = action.payload
                 state.isAuthenticate = true
             })
             .addMatcher(authService.endpoints.recoverPassword.matchFulfilled, (state) => {

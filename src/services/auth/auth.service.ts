@@ -4,7 +4,6 @@ import {
     LoginArgsType, MessageFromBack,
     RegisterArgsType,
     ResponseUserData,
-    UserData
 } from 'src/types'
 
 export const authService = baseApi.injectEndpoints({
@@ -26,8 +25,8 @@ export const authService = baseApi.injectEndpoints({
                 body: data
             })
         }),
-        //Аутентификация пользователя
-        current: builder.query<UserData, void>({
+        //Аутентификация пользователя (UserData)
+        current: builder.query<ResponseUserData, void>({
             query: () => ({
                 url: '/user/current',
                 method: 'GET',
