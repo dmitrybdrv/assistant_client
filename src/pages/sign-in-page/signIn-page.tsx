@@ -1,19 +1,17 @@
 import {isErrorWithMessage, useThemeStyles, useToast} from 'src/common'
 import _bp from 'src/styles/boilerPlateTheme.module.scss'
 import {useCurrentQuery, useLoginMutation} from 'src/services'
-import {useNavigate} from 'react-router-dom'
 import {LoginArgsType} from 'src/types'
-import {PathConstant} from 'src/routes'
 import {SignIn} from 'src/components'
-import {useEffect} from 'react'
+import {Navigate} from 'react-router-dom'
+import {PathConstant} from 'src/routes'
 
 export function SignInPage() {
-
-    const {data} = useCurrentQuery()
+    
     const {themeStyle} = useThemeStyles(_bp, [_bp.formContainer])
     const {showToast} = useToast()
     const [userLogin] = useLoginMutation()
-    const navigate = useNavigate()
+    const {data, isLoading} = useCurrentQuery()
 
     const login = async (data: LoginArgsType) => {
 
@@ -37,12 +35,8 @@ export function SignInPage() {
         }
 
     }
-
-    useEffect(() => {
-        if (data) {
-            navigate(PathConstant.PRIVATE_ROUTES.MAIN_PAGE)
-        }
-    }, [navigate, data])
-
-    return <section className={themeStyle}> <SignIn onSubmit={login}/> </section>
+    if(data) {
+        return <Navigate to={PathConstant.PRIVATE_ROUTES.MAIN_PAGE}/>
+    }
+    return !isLoading && <section className={themeStyle}><SignIn onSubmit={login}/></section>
 }
