@@ -1,12 +1,7 @@
-import {useCurrentQuery} from 'src/services'
-import {Navigate} from 'react-router-dom'
-import {PathConstant} from 'src/routes'
+import {useAuthRedirect} from 'src/common/hooks/useAuthRedirect.ts'
 
 export const MainPage = () => {
-    const {data, isLoading} = useCurrentQuery()
-
-    if(!data) {
-        return <Navigate to={PathConstant.PUBLIC_ROUTES.SIGN_IN_PAGE}/>
-    }
-    return !isLoading && <div>Main page</div>
+    useAuthRedirect()
+    
+    return <div>Main page</div>
 }

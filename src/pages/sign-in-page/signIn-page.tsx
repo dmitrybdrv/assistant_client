@@ -1,17 +1,18 @@
 import {isErrorWithMessage, useThemeStyles, useToast} from 'src/common'
 import _bp from 'src/styles/boilerPlateTheme.module.scss'
-import {useCurrentQuery, useLoginMutation} from 'src/services'
+import {useLoginMutation} from 'src/services'
 import {LoginArgsType} from 'src/types'
 import {SignIn} from 'src/components'
-import {Navigate} from 'react-router-dom'
+import {useAuthRedirect} from 'src/common/hooks/useAuthRedirect.ts'
 import {PathConstant} from 'src/routes'
 
+
 export function SignInPage() {
-    
+
     const {themeStyle} = useThemeStyles(_bp, [_bp.formContainer])
     const {showToast} = useToast()
     const [userLogin] = useLoginMutation()
-    const {data, isLoading} = useCurrentQuery()
+
 
     const login = async (data: LoginArgsType) => {
 
@@ -24,8 +25,7 @@ export function SignInPage() {
                 })
                 .catch()
 
-        }
-        catch (e) {
+        } catch (e) {
             const mayBeError = isErrorWithMessage(e)
             if (mayBeError) {
                 showToast(e.data.message, 'error')
@@ -35,8 +35,8 @@ export function SignInPage() {
         }
 
     }
-    if(data) {
-        return <Navigate to={PathConstant.PRIVATE_ROUTES.MAIN_PAGE}/>
-    }
-    return !isLoading && <section className={themeStyle}><SignIn onSubmit={login}/></section>
+
+     useAuthRedirect(PathConstant.PRIVATE_ROUTES.MAIN_PAGE)
+
+    return <section className={themeStyle}><SignIn onSubmit={login}/></section>
 }
