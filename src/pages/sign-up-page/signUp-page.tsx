@@ -20,7 +20,6 @@ export function SignUpPage() {
                 .then(() => {
                     navigate(PathConstant.PUBLIC_ROUTES.SUCCESS_SIGN_UP_PAGE)
                 })
-                .catch()
         }
         catch (e) {
             const mayBeError = isErrorWithMessage(e)

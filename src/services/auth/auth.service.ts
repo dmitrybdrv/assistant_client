@@ -3,13 +3,13 @@ import {
     EmailType,
     LoginArgsType, MessageFromBack,
     RegisterArgsType,
-    ResponseUserData,
+    ResponseLoginUserData, UserData,
 } from 'src/types'
 
 export const authService = baseApi.injectEndpoints({
     endpoints: (builder) => ({
         //Логинизация
-        login: builder.mutation<ResponseUserData, LoginArgsType>({
+        login: builder.mutation<ResponseLoginUserData, LoginArgsType>({
             query: data => ({
                 url: '/user/login',
                 method: 'POST',
@@ -18,15 +18,15 @@ export const authService = baseApi.injectEndpoints({
             invalidatesTags: ['User']
         }),
         //Регистрайция
-        register: builder.mutation<ResponseUserData, RegisterArgsType>({
+        register: builder.mutation<MessageFromBack, RegisterArgsType>({
             query: data => ({
                 url: '/user/register',
                 method: 'POST',
                 body: data
             })
         }),
-        //Аутентификация пользователя (UserData)
-        current: builder.query<ResponseUserData, void>({
+        //Аутентификация пользователя
+        current: builder.query<UserData, void>({
             query: () => ({
                 url: '/user/current',
                 method: 'GET',
@@ -45,10 +45,18 @@ export const authService = baseApi.injectEndpoints({
         createNewPass: builder.mutation<MessageFromBack, {password: string}>({
            query: body => ({
                url: '/user/create-new-password',
-               method: 'POSt',
+               method: 'POST',
                body
            })
         }),
+        //Вылогинивание
+        logout: builder.mutation<MessageFromBack, void>({
+            query: () => ({
+                url: '/user/logout',
+                method: 'POST'
+            }),
+            invalidatesTags: ['User']
+        })
     })
 })
 
@@ -58,4 +66,5 @@ export const {
     useRegisterMutation,
     useRecoverPasswordMutation,
     useCreateNewPassMutation,
+    useLogoutMutation,
 } = authService

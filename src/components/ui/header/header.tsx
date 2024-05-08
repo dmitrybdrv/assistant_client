@@ -17,7 +17,7 @@ export function Header() {
                 <img className={s.headerLogo} src={logo} alt="logo"/>
                 <Switcher/>
             </div>
-            {user?.id && <Navbar/>}
+            {user.email && <Navbar/>}
         </header>
     )
 }

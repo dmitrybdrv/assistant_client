@@ -1,7 +1,29 @@
-import {useAuthRedirect} from 'src/common/hooks/useAuthRedirect.ts'
+import {useAppSelector} from 'src/common'
+import {selectUser} from 'src/features'
+import {useEffect} from 'react'
+import {PathConstant} from 'src/routes'
+import {useNavigate} from 'react-router-dom'
 
 export const MainPage = () => {
-    useAuthRedirect()
+
+    const user = useAppSelector(selectUser)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if(!user.email) {
+            navigate(PathConstant.PUBLIC_ROUTES.SIGN_IN_PAGE)
+        }
+    }, [user])
     
-    return <div>Main page</div>
+    return (
+        <div>
+            {
+                user &&
+                <ul>
+                    <li>User name is {user.name}</li>
+                    <li>User email - {user.email}</li>
+                </ul>
+            }
+        </div>
+    )
 }

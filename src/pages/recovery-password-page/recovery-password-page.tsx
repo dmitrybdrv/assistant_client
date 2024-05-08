@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom'
 import {PathConstant} from 'src/routes'
 import {EmailType} from 'src/types'
 
-export const ReoveryPasswordPage = () =>{
+export const RecoveryPasswordPage = () =>{
     const navigate = useNavigate()
     const {setEmail} = useActions()
     const [recoverPassword] = useRecoverPasswordMutation()

@@ -1,1 +1,1 @@
-export * from './reovery-password-page.tsx'
+export * from './recovery-password-page.tsx'

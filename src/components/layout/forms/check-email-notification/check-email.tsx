@@ -3,12 +3,14 @@ import {Button, Card, Typography} from 'src/components'
 import {CheckEmailImg} from 'src/assets'
 import {PathConstant} from 'src/routes'
 import {Link} from 'react-router-dom'
+import {useAppSelector} from 'src/common'
+import {userEmailSelector} from 'src/features'
 
 /*
-Форма-уведомление о проверки почты, на которую отправлена инструкция по востановлению доступа
+Форма-уведомление о том, что на указанную пользователем почту было отправлено письмо с инструкциями по восстановлению
  */
 export const CheckEmail = () => {
-
+    const email = useAppSelector(userEmailSelector)
 
     return (
         <Card className={_bp.formWrapper}>
@@ -20,7 +22,7 @@ export const CheckEmail = () => {
 
                 <Typography variant={'body2'} className={_bp.footnote}>
                     {'We have sent an Email with instructions to '}
-                    <strong>{'мой емаил'}</strong>
+                    <strong>{email ? email : 'your email'}</strong>
                 </Typography>
 
                 <CheckEmailImg className={_bp.emailIcon}/>

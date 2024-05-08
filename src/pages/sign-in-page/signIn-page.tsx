@@ -20,10 +20,8 @@ export function SignInPage() {
             await userLogin(data)
                 .unwrap()
                 .then((res) => {
-                    const userName = res?.name ? res.name : 'User'
-                    showToast(`Welcome 😀, ${userName}`, 'success')
+                    showToast(res.message, 'success')
                 })
-                .catch()
 
         } catch (e) {
             const mayBeError = isErrorWithMessage(e)

@@ -26,6 +26,9 @@ dependencies:
   i18next:
     specifier: ^23.8.2
     version: 23.8.2
+  immer:
+    specifier: ^10.1.1
+    version: 10.1.1
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -865,7 +868,7 @@ packages:
       react-redux:
         optional: true
     dependencies:
-      immer: 10.0.4
+      immer: 10.1.1
       react: 18.2.0
       react-redux: 9.1.0(@types/react@18.2.43)(react@18.2.0)(redux@5.0.1)
       redux: 5.0.1
@@ -1727,8 +1730,8 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
-  /immer@10.0.4:
-    resolution: {integrity: sha512-cuBuGK40P/sk5IzWa9QPUaAdvPHjkk1c+xYsd9oZw+YQQEV+10G0P5uMpGctZZKnyQ+ibRO08bD25nWLmYi2pw==}
+  /immer@10.1.1:
+    resolution: {integrity: sha512-s2MPrmjovJcoMaHtx6K11Ra7oD05NT97w1IC5zpMkT6Atjr7H8LjaDd81iIxUYpMKSRRNMJE703M1Fhr/TctHw==}
     dev: false
 
   /immutable@4.3.5:

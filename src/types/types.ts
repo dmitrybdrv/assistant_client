@@ -24,17 +24,14 @@ export type RegisterArgsType = {
     confirmPassword?: string
 }
 
-export type ResponseUserData = {
-    id: string,
-    name: string,
-    email: string,
+export type ResponseLoginUserData = {
+    message: string,
     token: string
 }
 
 export type UserData = {
-    id: string
+    token?: string
     name: string
-    password: string
     email: string
     createdReviewerBot: ReviewerBotType[]
 }
@@ -45,7 +42,7 @@ export type ReviewerBotType = {
     //TODO пофиксить тип user со string на верный
     user: string
     userId: string
-    answerRule: string
+    botPromtPreset: string
 }
 
 export type RecoverPassword = {
@@ -56,7 +53,7 @@ export type RecoverPassword = {
 
 export type MessageFromBack = {message: string}
 
-export type PasswordType = Pick<UserData, 'password'>
+export type PasswordType = {password: string}
 
 export type EmailType = Pick<UserData, 'email'>
 

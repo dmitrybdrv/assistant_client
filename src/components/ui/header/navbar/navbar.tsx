@@ -2,16 +2,22 @@ import {useActions} from 'src/common/hooks/useActions.ts'
 import s from './navbar.module.scss'
 import {Button} from '../../button'
 import {useToast} from 'src/common'
+import {useLogoutMutation} from 'src/services'
 
 export function Navbar() {
 
     const {showToast} = useToast()
-    const {logout} = useActions()
+    const {clearUserData} = useActions()
+    const [logout] = useLogoutMutation()
 
-    const outHandler = () => {
+    const outHandler = async () => {
         try {
-            logout()
-            showToast('Bye!!!', 'success')
+            await logout()
+                .unwrap()
+                .then((res) => {
+                    clearUserData()
+                    showToast(res.message, 'success')
+                })
         } catch (e) {
             console.log(e)
         }
