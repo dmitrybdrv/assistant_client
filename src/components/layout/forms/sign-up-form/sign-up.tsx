@@ -18,6 +18,7 @@ export const SignUp = ({ onSubmit }: FormPropsType<RegisterArgsType>) => {
         defaultValues: {
             email: '',
             name: '',
+            inn: '',
             password: '',
             confirmPassword: ''
         },
@@ -41,6 +42,12 @@ export const SignUp = ({ onSubmit }: FormPropsType<RegisterArgsType>) => {
                     {...register('name')}
                     label={'Name'}
                     error={errors.name}
+                />
+
+                <TextField
+                    {...register('inn')}
+                    label={'INN'}
+                    error={errors.inn}
                 />
 
                 <TextField

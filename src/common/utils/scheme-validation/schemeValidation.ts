@@ -23,6 +23,17 @@ export const nameSchema = z.object({
 })
 
 /*
+Валидация для проверки ИНН
+@params .min - минимальное количество знаков
+@params .max - максимально допустимое количество знаков для имени
+ */
+export const innSchema = z.object({
+    inn: z.string()
+        .min(12, 'Field is required')
+        .max(12, {message: 'too much letters'})
+})
+
+/*
 Валидация пароля:
 @params .min - минимальное количество знаков
 @params .max - ьаксимальное количество знаков
@@ -57,6 +68,7 @@ export const signInSchema = z.object({
 export const signUpSchema = z.object({
     email: emailSchema.shape.email,
     name: nameSchema.shape.name,
+    inn: innSchema.shape.inn,
     password: passwordSchema.shape.password,
     confirmPassword: passwordSchema.shape.password
 })

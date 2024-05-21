@@ -20,6 +20,7 @@ export type LoginArgsType = {
 export type RegisterArgsType = {
     email: string
     name: string
+    inn: string
     password: string
     confirmPassword?: string
 }

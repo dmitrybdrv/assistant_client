@@ -19,7 +19,7 @@ export function Footer() {
                 </div>
             </div>
             <div>
-                Приложение AssistOzon:
+                Приложение OZONassistant:
                 <div>
                     <button style={{backgroundColor: 'inherit'}}>Google Play</button>
                     <button style={{backgroundColor: 'inherit'}}>App Store</button>
