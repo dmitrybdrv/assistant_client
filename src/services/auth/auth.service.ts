@@ -11,16 +11,16 @@ export const authService = baseApi.injectEndpoints({
         //Логинизация
         login: builder.mutation<ResponseLoginUserData, LoginArgsType>({
             query: data => ({
-                url: '/user/login',
+                url: '/company/login',
                 method: 'POST',
                 body: data
             }),
-            invalidatesTags: ['User']
+            invalidatesTags: ['Company']
         }),
         //Регистрайция
         register: builder.mutation<MessageFromBack, RegisterArgsType>({
             query: data => ({
-                url: '/user/register',
+                url: '/company/register',
                 method: 'POST',
                 body: data
             })
@@ -28,10 +28,10 @@ export const authService = baseApi.injectEndpoints({
         //Аутентификация пользователя
         current: builder.query<UserData, void>({
             query: () => ({
-                url: '/user/current',
+                url: '/company/current',
                 method: 'GET',
             }),
-            providesTags: ['User']
+            providesTags: ['Company']
         }),
         //Восстановление пароля, сброс пароля на почту
         recoverPassword: builder.mutation<MessageFromBack, EmailType>({
@@ -52,10 +52,10 @@ export const authService = baseApi.injectEndpoints({
         //Вылогинивание
         logout: builder.mutation<MessageFromBack, void>({
             query: () => ({
-                url: '/user/logout',
+                url: '/company/logout',
                 method: 'POST'
             }),
-            invalidatesTags: ['User']
+            invalidatesTags: ['Company']
         })
     })
 })

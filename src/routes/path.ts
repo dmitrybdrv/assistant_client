@@ -13,7 +13,7 @@ export const PathConstant = {
     PUBLIC_ROUTES: {
         AUTH: '/api',
         SIGN_IN_PAGE: '/api/user/login',
-        SIGN_UP_PAGE: '/api/user/register',
+        COMPANY_SIGN_UP_PAGE: '/api/company/register',
         RECOVERY_PASSWORD: '/api/user/recovery-password',
         CHECK_EMAIL_PAGE: '/api/user/check-email-notification',
         SUCCESS_RESET_PASSWORD_PAGE: '/api/user/success-reset-password-notification',

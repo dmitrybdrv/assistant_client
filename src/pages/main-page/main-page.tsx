@@ -14,16 +14,11 @@ export const MainPage = () => {
             navigate(PathConstant.PUBLIC_ROUTES.SIGN_IN_PAGE)
         }
     }, [user])
+
     
     return (
         <div>
-            {
-                user &&
-                <ul>
-                    <li>User name is {user.name}</li>
-                    <li>User email - {user.email}</li>
-                </ul>
-            }
+           Hi
         </div>
     )
 }

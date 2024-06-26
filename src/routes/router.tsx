@@ -19,7 +19,7 @@ const publicRoutes: RouteObject[] = [
                         element: <SignInPage />,
                     },
                     {
-                        path: PathConstant.PUBLIC_ROUTES.SIGN_UP_PAGE,
+                        path: PathConstant.PUBLIC_ROUTES.COMPANY_SIGN_UP_PAGE,
                         element: <SignUpPage />,
                     },
                     {

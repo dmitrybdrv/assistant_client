@@ -13,7 +13,6 @@ export function SignInPage() {
     const {showToast} = useToast()
     const [userLogin] = useLoginMutation()
 
-
     const login = async (data: LoginArgsType) => {
 
         try {
@@ -34,7 +33,7 @@ export function SignInPage() {
 
     }
 
-     useAuthRedirect(PathConstant.PRIVATE_ROUTES.MAIN_PAGE)
+    useAuthRedirect(PathConstant.PRIVATE_ROUTES.MAIN_PAGE)
 
     return <section className={themeStyle}><SignIn onSubmit={login}/></section>
 }

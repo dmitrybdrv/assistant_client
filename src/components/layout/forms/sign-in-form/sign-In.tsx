@@ -71,7 +71,7 @@ export const SignIn = ({onSubmit}: FormPropsType<LoginArgsType>) => {
                 </Typography>
 
                 <Typography variant={'link1'}>
-                    <Link className={_bp.linkWrapper} to={PathConstant.PUBLIC_ROUTES.SIGN_UP_PAGE}>
+                    <Link className={_bp.linkWrapper} to={PathConstant.PUBLIC_ROUTES.COMPANY_SIGN_UP_PAGE}>
                         Sign Up
                     </Link>
                 </Typography>

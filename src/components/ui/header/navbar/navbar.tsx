@@ -1,14 +1,15 @@
 import {useActions} from 'src/common/hooks/useActions.ts'
 import s from './navbar.module.scss'
-import {Button} from '../../button'
-import {useToast} from 'src/common'
 import {useLogoutMutation} from 'src/services'
+import {isErrorWithMessage, useToast} from 'src/common'
+//import {UserAvatar} from 'src/components/ui/avatar'
 
 export function Navbar() {
 
     const {showToast} = useToast()
     const {clearUserData} = useActions()
     const [logout] = useLogoutMutation()
+
 
     const outHandler = async () => {
         try {
@@ -19,13 +20,18 @@ export function Navbar() {
                     showToast(res.message, 'success')
                 })
         } catch (e) {
-            console.log(e)
+            const mayBeError = isErrorWithMessage(e)
+            if (mayBeError) {
+                showToast(e.data.message, 'error')
+            } else {
+                showToast('Что-то пошло не так 😬', 'error')
+            }
         }
     }
 
-    return <nav className={s.navbarContainer}>
-                <Button onClick={outHandler}>
-                    LogOUT
-                </Button>
-    </nav>
+    return (
+        <nav className={s.navbarContainer}>
+            <div onClick={outHandler}>OOO</div>
+        </nav>
+    )
 }

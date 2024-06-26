@@ -22,6 +22,6 @@ export const baseApi = createApi({
     reducerPath: 'baseApi',
     baseQuery: baseQueryWithRetry,
     refetchOnMountOrArgChange: true,
-    tagTypes: ['User'],
+    tagTypes: ['Company'],
     endpoints: () => ({})
 })

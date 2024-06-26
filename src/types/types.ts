@@ -32,6 +32,7 @@ export type ResponseLoginUserData = {
 
 export type UserData = {
     token?: string
+    avatar?: string
     name: string
     email: string
     createdReviewerBot: ReviewerBotType[]
